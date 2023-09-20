@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ChuViHinhTron</title>
+</head>
+<body>
+<label>Nhap Ban Kinh Cua Hinh Tron <input type="number" id="R" value="r"></label>
+<button onclick="tinhChuVi()">TinhChuVi</button>
+<p id="result">Result:</p>
+<script>
+  function tinhChuVi () {
+    let r = document.getElementById("R").value;
+    const PI = 3.14;
+    let chuVi = r * 2 * PI;
+    document.getElementById("result").innerHTML = "Result: " + chuVi;
+  }
+</script>
+
+</body>
+</html>

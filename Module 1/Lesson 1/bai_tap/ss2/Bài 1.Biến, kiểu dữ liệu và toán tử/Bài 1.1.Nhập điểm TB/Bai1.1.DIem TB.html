@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DiemTb</title>
+</head>
+<body>
+<label>Toan<input type="number" id="Toan" value="Toan"></label> <br> <br>
+<label>Hoa<input type="number" id="Hoa" value="Hoa"></label> <br> <br>
+<label>Sinh<input type="number" id="Sinh" value="Sinh"></label> <br> <br>
+<button type="button" onclick="tinhDiemTrungBinh()">diemtrungbinh</button>
+<script>
+    function tinhDiemTrungBinh() {
+        let diemToan = +document.getElementById("Toan").value;
+        let diemHoa = +document.getElementById("Hoa").value;
+        let diemSinh = +document.getElementById("Sinh").value;
+        let diemTB=(diemToan+diemSinh+diemHoa)/3 ;
+        alert(diemTB) ;
+    }
+</script>
+</body>
+</html>

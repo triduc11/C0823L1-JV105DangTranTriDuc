@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChuyenDoiTienTe</title>
+    <script src="CongThucTinhTien.js"></script>
+</head>
+<body>
+<label>Amount:<input type="number" id="tien" value="tien"></label> <br> <br>
+<label>From Currency:</label>
+<select id="from">
+    <option value="VND">VNĐ</option>
+    <option value="USD">USA</option>
+</select>
+<br> <br>
+<label>To Currency:</label>
+<select id="to">
+    <option value="USD">USA</option>
+    <option value="VND">VNĐ</option>
+</select>
+<br>
+<br>
+<button onclick="chuyenDoi()">Convert</button>
+<p id="Result">Result:</p>
+</body>
+</html>
