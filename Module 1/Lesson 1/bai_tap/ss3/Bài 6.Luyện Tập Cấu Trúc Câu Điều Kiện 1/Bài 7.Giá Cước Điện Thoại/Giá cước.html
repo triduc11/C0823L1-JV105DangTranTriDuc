@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Giá Cước</title>
+</head>
+<body>
+<label><input id="min" type="number" value="min" placeholder="Hây nhập số phút bạn đã gọi điện"></label>
+<button onclick="kiemTra()">KiemTra</button>
+<p id="Result">Result:</p>
+<script>
+  function kiemTra() {
+    let min=+document.getElementById("min").value ;
+    let Result ;
+    if (min>0) {
+      if (min>120) {
+        Result="Bạn tốn 500.000 VNĐ" ;
+      } else if (min>60) {
+        Result="Bạn tốn 300.000 VNĐ" ;
+      } else if (min>30) {
+        Result="Bạn tốn 100.000 VNĐ" ;
+      } else if (min>15) {
+        Result="Bạn tốn 50.000 VNĐ";
+      } else {
+        Result="Bạn tốn 20.000 VNĐ";
+      }
+    } else {
+      Result="Số phút bạn nhập không hợp lệ .Xin Hãy nhập lại";
+    }
+    document.getElementById("Result").innerHTML ="Result: " + Result ;
+  }
+</script>
+
+</body>
+</html>

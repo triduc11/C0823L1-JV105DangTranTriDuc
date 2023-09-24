@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp hạng học lực</title>
+</head>
+<body>
+<label><input id="mark" type="number" value="mark" placeholder="Hây nhập điểm của bạn"></label>
+<button onclick="kiemTra()">KiemTra</button>
+<p id="Result">Result:</p>
+<script>
+  function kiemTra() {
+    let mark=+document.getElementById("mark").value ;
+    let Result ;
+    if (mark>0 && mark<10) {
+      if (mark>8) {
+        Result="Học Sinh Giỏi" ;
+      } else if (mark >6.5) {
+        Result="Học Sinh Khá" ;
+      } else if (mark>5) {
+        Result="Học Sinnh Trung Bình" ;
+      } else {
+        Result="Học Sinh Yếu"
+      }
+    } else {
+      Result="Điểm của bạn nhập không hợp lệ";
+    }
+    document.getElementById("Result").innerHTML ="Result: " + Result ;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra Số Nhỏ Hơn 0</title>
+</head>
+<body>
+<label><input id="num" type="number" value="num" placeholder="Hây nhập số cần kiểm tra "></label>
+<button onclick="kiemTra()">KiemTra</button>
+<p id="Result">Result:</p>
+<script>
+    function kiemTra() {
+        let a=+document.getElementById("num").value ;
+        let Result ;
+        if(a>0) {
+            Result= "Là số lớn hơn không";
+        } else if(a<0) {
+            Result= "Là số nhỏ hơn không";
+        } else {
+            Result= "Là số 0";
+        }
+        document.getElementById("Result").innerHTML ="Result: " + Result ;
+    }
+</script>
+</body>
+</html>

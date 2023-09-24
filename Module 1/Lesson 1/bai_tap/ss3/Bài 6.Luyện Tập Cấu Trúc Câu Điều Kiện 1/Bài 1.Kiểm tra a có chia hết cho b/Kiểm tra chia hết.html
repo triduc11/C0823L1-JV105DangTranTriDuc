@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra</title>
+</head>
+<body>
+<label><input id="a" value="num" type="number" placeholder="nhập a" ></label>
+<label><input id="b" value="num" type="number" placeholder="nhập b" ></label>
+<button onclick="kiemTra()">KiemTra</button>
+<p id="Result">Result:</p>
+<script>
+  function kiemTra() {
+    let a = +document.getElementById("a").value;
+    let b = +document.getElementById("b").value;
+    let Result;
+    if (a % b === 0) {
+      Result = "a chia hết cho b";
+    } else {
+      Result = "a không chia hết cho b";
+    }
+    document.getElementById("Result").innerHTML ="Result: " + Result ;
+  }
+</script>
+</body>
+</html>

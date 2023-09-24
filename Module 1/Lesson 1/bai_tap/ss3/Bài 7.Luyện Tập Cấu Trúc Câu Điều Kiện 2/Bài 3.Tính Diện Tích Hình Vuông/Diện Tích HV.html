@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>dienTichHV</title>
+</head>
+<body>
+<label><input type="number" id="a" value="a" placeholder="Hãy nhập độ dài "></label>
+<button onclick="tinhToan()">Tính Toán</button>
+<p id="result">Result:</p>
+<script>
+  function tinhToan() {
+    let a = +document.getElementById("a").value  ;
+    let s = a*a ;
+    document.getElementById("result").innerHTML = "Result: " + s +" đơn vị độ dài" ;
+  }
+</script>
+</body>
+</html>

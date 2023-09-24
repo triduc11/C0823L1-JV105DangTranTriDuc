@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải Phương Trình Bậc 2</title>
+</head>
+<body>
+<label><input type="number" id="a" value="a" placeholder="Hãy nhập a "></label>
+<label><input type="number" id="b" value="b" placeholder="Hãy nhập b"></label>
+<label><input type="number" id="c" value="c" placeholder="Hãy nhập c"></label>
+<button onclick="tinhToan()">Tính Toán</button>
+<p id="result">Result:</p>
+<script>
+    function tinhToan() {
+        let a=+document.getElementById("a").value ;
+        let b=+document.getElementById("b").value ;
+        let c=+document.getElementById("c").value ;
+        let Result ;
+        let denta= (b*b)-(4*a*c) ;
+        if (denta>=0) {
+            Result = "Phương trình có nghiệm là "+ (-b+Math.sqrt(denta))/(2*a) + " và " + (-b-Math.sqrt(denta))/(2*a) ;
+        } else if (denta===0) {
+            Result= "Phương trình có nghiệm kép là " + (-b/(2*a)) ;
+        } else {
+            Result="Phương trình vô nghiệm" ;
+        }
+        document.getElementById("result").innerHTML = Result;
+    }
+</script>
+</body>
+</html>

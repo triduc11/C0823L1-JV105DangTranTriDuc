@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DoYouLoveMe</title>
+</head>
+<body>
+<h1 style="position:absolute; left: 200px ;top: 200px">Do You LoVe Me ?</h1>
+<input id="Yes" type="button" value="YES" onclick="clickYes()" style="position:absolute; left:200px; top:270px" >
+<input id="No" type="button" value="NO" onmouseover="clickNo()" style="position:absolute; left:375px; top:270px" >
+<script>
+    function clickYes() {
+        alert("Yes. I love U too <3000");
+    }
+    function clickNo() {
+        let x=Math.round(Math.random()*window.innerWidth);
+        let y=Math.round(Math.random()*window.innerHeight);
+        document.getElementById("No").style.left= x +'px' ;
+        document.getElementById("No").style.top= y +'px' ;
+        // innerWidth và innerHeight là chiều cao và chiều dài của Cửa Sổ Web
+        //Math.round là làm tròn  , Math.random là nhảy giá trị tùy ý
+    }
+</script>
+</body>
+</html>

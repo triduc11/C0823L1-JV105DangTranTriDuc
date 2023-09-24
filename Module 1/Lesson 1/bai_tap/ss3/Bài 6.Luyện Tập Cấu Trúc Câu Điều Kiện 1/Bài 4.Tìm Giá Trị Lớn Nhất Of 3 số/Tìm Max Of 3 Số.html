@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Max Of 3 Số</title>
+</head>
+<body>
+<label><input id="a" value="num" type="number" placeholder="nhập a" ></label>
+<label><input id="b" value="num" type="number" placeholder="nhập b" ></label>
+<label><input id="c" value="num" type="number" placeholder="nhập c" ></label>
+<button onclick="kiemTra()">KiemTra</button>
+<p id="Result">Result:</p>
+<script>
+  function kiemTra() {
+    let a=+document.getElementById("a").value ;
+    let b=+document.getElementById("b").value ;
+    let c=+document.getElementById("c").value ;
+    let Result ;
+    let Max=a ;
+    if (Max<b) {
+      Max=b ;
+      Result= "Số Lớn Nhất Là "+ Max;
+    }
+    if (Max<c) {
+      Max=c;
+      Result= "Số Lớn Nhất Là "+ Max;
+    }
+    if (Max===a){
+      Result= "Số Lớn Nhất Là "+ Max;
+    }
+    document.getElementById("Result").innerHTML ="Result: " + Result ;
+  }
+</script>
+</body>
+</html>

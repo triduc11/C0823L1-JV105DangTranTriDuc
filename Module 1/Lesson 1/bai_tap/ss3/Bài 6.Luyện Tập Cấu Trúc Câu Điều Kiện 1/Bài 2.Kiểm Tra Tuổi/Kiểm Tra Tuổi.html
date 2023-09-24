@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra Tuổi</title>
+</head>
+<body>
+<label><input id="age" type="number" value="age" placeholder="Hây nhập tuổi"></label>
+<button onclick="kiemTra()">KiemTra</button>
+<p id="Result">Result:</p>
+<script>
+    function kiemTra() {
+        let age=+document.getElementById("age").value ;
+        let Result ;
+        if (age>=15) {
+           Result = "Đủ điều kiện vào lớp 10" ;
+        } else {
+           Result ="Không đủ điều kiện vào lớp 10"
+        }
+        document.getElementById("Result").innerHTML ="Result: " + Result ;
+    }
+</script>
+</body>
+</html>

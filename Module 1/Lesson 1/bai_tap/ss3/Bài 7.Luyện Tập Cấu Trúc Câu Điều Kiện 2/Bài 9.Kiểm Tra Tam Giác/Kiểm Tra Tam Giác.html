@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra Tam Giác</title>
+</head>
+<body>
+<label><input type="number" id="a" value="a" placeholder="Hãy nhập độ dài cạnh a "></label>
+<label><input type="number" id="b" value="b" placeholder="Hãy nhập độ dài cạnh b"></label>
+<label><input type="number" id="c" value="c" placeholder="Hãy nhập độ dài cạnh c"></label>
+<button onclick="tinhToan()">Tính Toán</button>
+<p id="result">Result:</p>
+<script>
+  function tinhToan() {
+    let a = +document.getElementById("a").value;
+    let b = +document.getElementById("b").value;
+    let c = +document.getElementById("c").value;
+    let Result;
+    if (a>0 && b>0 && c>0) {
+      if (a + b > c) {
+        Result = "Là một tam giác"
+      } else if (b + c > a) {
+        Result = "Là một tam giác"
+      } else if (c + a > b) {
+        Result = "Là một tam giác"
+      }
+    } else {
+      Result = "Bạn đã nhập sai dữ liệu. Xin hãy nhập lại"
+    }
+    document.getElementById("result").innerHTML = Result;
+  }
+</script>
+</body>
+</html>

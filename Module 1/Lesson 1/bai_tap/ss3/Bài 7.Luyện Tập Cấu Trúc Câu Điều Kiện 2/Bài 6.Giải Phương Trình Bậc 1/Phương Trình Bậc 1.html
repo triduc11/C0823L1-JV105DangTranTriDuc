@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải Phương Trìnnh</title>
+</head>
+<body>
+<label><input type="number" id="a" value="a" placeholder="Hãy nhập a "></label>
+<label><input type="number" id="b" value="b" placeholder="Hãy nhập b"></label>
+<button onclick="tinhToan()">Tính Toán</button>
+<p id="result">Result:</p>
+<script>
+  function tinhToan() {
+    let a = +document.getElementById("a").value  ;
+    let b = +document.getElementById("b").value  ;
+    let Result ;
+    if(a!==0) {
+      if (b!==0) {
+        Result="Phương trình có nghiệm là" + -b/a ;
+      } else {
+        Result="Phương trình có vô số nghiệm"
+      }
+
+    } else {
+       Result="Phương trình vô nghiệm"
+    }
+    document.getElementById("result").innerHTML = Result;
+  }
+</script>
+</body>
+</html>

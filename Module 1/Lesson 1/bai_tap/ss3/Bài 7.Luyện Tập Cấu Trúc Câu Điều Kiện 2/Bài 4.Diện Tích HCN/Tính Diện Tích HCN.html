@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>dienTichHCN</title>
+</head>
+<body>
+<label><input type="number" id="a" value="a" placeholder="Hãy nhập độ dài chiều rộng "></label>
+<label><input type="number" id="b" value="b" placeholder="Hãy nhập độ dài chiều dài "></label>
+<button onclick="tinhToan()">Tính Toán</button>
+<p id="result">Result:</p>
+<script>
+  function tinhToan() {
+    let a = +document.getElementById("a").value  ;
+    let b = +document.getElementById("b").value  ;
+    let s = a*b ;
+    document.getElementById("result").innerHTML = "Result: " + s +" đơn vị độ dài" ;
+  }
+</script>
+</body>
+</html>

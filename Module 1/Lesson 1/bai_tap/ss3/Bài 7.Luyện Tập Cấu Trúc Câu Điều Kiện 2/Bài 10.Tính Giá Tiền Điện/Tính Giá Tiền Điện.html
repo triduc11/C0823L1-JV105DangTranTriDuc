@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Tiền Điện</title>
+</head>
+<body>
+<label><input id="elc" type="number" value="elc" placeholder="Hây nhập số điện bạn đã dùng (kWh)"></label>
+<button onclick="tinhTien()">TinhTien</button>
+<p id="result">Result:</p>
+<script>
+    function tinhTien() {
+        let elc=+document.getElementById("elc").value ;
+        let result ;
+        if (elc>0) {
+            if (elc<50) {
+                result = "Giá tiền là " + elc*1000 ;
+            } else if (elc>50 && elc<100) {
+                result = "Giá tiền là " + elc*2000 ;
+            } else if (elc>100 && elc<200) {
+                result = "Giá tiền là " + elc*5000 ;
+            } else {
+                result = "Giá tiền là " + elc*10000 ;
+            }
+        } else {
+            result ="Bạn đã nhập sai giá trị"
+        }
+        document.getElementById("result").innerHTML = result ;
+    }
+</script>
+</body>
+</html>

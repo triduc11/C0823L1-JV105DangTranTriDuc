@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự Kiện Bàn Phím</title>
+</head>
+<body onload="docReady()">
+<img id="ball" src="Ảnh/pic.jpg" style="position: absolute ;left: 0; top: 0" height="150" width="150" />
+<script>
+  function upArrow() {
+    var element=document.getElementById("ball") ;
+    element.style.top=parseInt(element.style.top) -5 +'px' ;
+  }
+  function downArrow() {
+    var element=document.getElementById("ball") ;
+    element.style.top=parseInt(element.style.top) +5 +'px' ;
+  }
+  function rightArrow() {
+    var element=document.getElementById("ball") ;
+    element.style.left=parseInt(element.style.left) +5 +'px' ;
+  }
+  function leftArrow() {
+    var element=document.getElementById("ball") ;
+    element.style.left=parseInt(element.style.left) -5 +'px' ;
+  }
+  function moveSelection(evt){
+    switch (evt.keyCode) {
+      case 37 :
+        leftArrow();
+        break;
+      case 39 :
+        rightArrow();
+        break;
+      case 38 :
+        upArrow();
+        break;
+      case 40 :
+        downArrow();
+        break;
+     }
+    }
+    function docReady() {
+      window.addEventListener('keydown', moveSelection);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Lãi</title>
+</head>
+<body>
+<label><input id="money" type="number" value="money" placeholder="Hây nhập số tiền của bạn"></label> <br> <br>
+<label><input id="year" type="number" value="money" placeholder="Hây nhập số năm bạn muốn vay"></label> <br> <br>
+<label><input id="lai" type="number" value="money" placeholder="Hây nhập % lãi của ngân hàng"></label> <br> <br>
+<button onclick="tinhTien()">TinhTien</button>
+<p id="result">Result:</p>
+<script>
+  function tinhTien() {
+    let money=+document.getElementById("money").value ;
+    let year=+document.getElementById("year").value ;
+    let lai=+document.getElementById("lai").value ;
+    let result ;
+    if (money>0 && year>0 && lai>0) {
+      result=money*(1+Math.pow((lai/100),year)) ;
+    } else {
+      result="Bạn đã nhập sai" ;
+    }
+    document.getElementById("result").innerHTML ="Tổng Số Tiền Phải Trả Là: "+ result +" VNĐ" ;
+  }
+</script>
+</body>
+</html>

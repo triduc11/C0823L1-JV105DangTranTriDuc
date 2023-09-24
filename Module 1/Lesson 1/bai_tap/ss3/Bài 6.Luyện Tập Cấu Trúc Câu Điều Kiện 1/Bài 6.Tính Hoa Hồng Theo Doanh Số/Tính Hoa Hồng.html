@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Hoa Hồng</title>
+</head>
+<body>
+<label><input id="mark" type="number" value="mark" placeholder="Hây nhập doanh thu của bạn"></label>
+<button onclick="kiemTra()">KiemTra</button>
+<p id="Result">Result:</p>
+<script>
+  function kiemTra() {
+    let mark=+document.getElementById("mark").value ;
+    let Result ;
+    if (mark>5000000) {
+      if (mark>100000000) {
+        Result="Bạn nhận được 5% hoa hồng" ;
+      } else if (mark >50000000) {
+        Result="Bạn nhận được 4% hoa hồng" ;
+      } else if (mark>10000000) {
+        Result="Bạn nhận được 2% hoa hồng" ;
+      } else {
+        Result="Bạn nhận được 1% hoa hồng"
+      }
+    } else {
+      Result="Bạn không nhận được hoa hồng";
+    }
+    document.getElementById("Result").innerHTML ="Result: " + Result ;
+  }
+</script>
+</body>
+</html>

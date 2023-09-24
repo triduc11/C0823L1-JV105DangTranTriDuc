@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kiểm Tra Tuổi</title>
+</head>
+<body>
+<label><input id="age" type="number" value="age" placeholder="Hây nhập tuổi"></label>
+<button onclick="kiemTra()">KiemTra</button>
+<p id="Result">Result:</p>
+<script>
+  function kiemTra() {
+    let age=+document.getElementById("age").value ;
+    let Result ;
+    if (age>0 && age<120) {
+      Result = "Bạn đã nhập tuổi phù hợp" ;
+    } else {
+      Result ="Bạn đã nhập tuổi không phù hợp .Xin hãy nhập lại"
+    }
+    document.getElementById("Result").innerHTML ="Result: " + Result ;
+  }
+</script>
+</body>
+</html>

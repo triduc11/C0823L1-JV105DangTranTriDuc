@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Máy Tính Đơn Giản</title>
+  <link rel="stylesheet" href="Trang Trí Cho Máy Tính.css">
+  <script src="Công Thức Tính Of Máy Tính.js"></script>
+</head>
+<body>
+<table>
+  <tr>
+    <td id="text1" colspan="4" ><label><input type="text" id="result" placeholder="Hãy nhập số"></label></td>
+  </tr>
+  <tr>
+    <td><button type="button" name="so" value="1" onclick="nhapSo('1')">1</button></td>
+    <td><button type="button" name="so" value="2" onclick="nhapSo('2')">2</button></td>
+    <td><button type="button" name="so" value="3" onclick="nhapSo('3')">3</button></td>
+    <td><button type="button" name="tinh" value ="+" onclick="nhapSo('+')">+</button></td>
+  </tr>
+  <tr>
+    <td><button type="button" name="so" value="4" onclick="nhapSo('4')">4</button></td>
+    <td><button type="button" name="so" value="5" onclick="nhapSo('5')">5</button></td>
+    <td><button type="button" name="so" value="6" onclick="nhapSo('6')">6</button></td>
+    <td><button type="button" name="tinh" value ="-" onclick="nhapSo('-')">-</button></td>
+  </tr>
+  <tr>
+    <td><button type="button" name="so" value="7" onclick="nhapSo('7')">7</button></td>
+    <td><button type="button" name="so" value="8" onclick="nhapSo('8')">8</button></td>
+    <td><button type="button" name="so" value="9" onclick="nhapSo('9')">9</button></td>
+    <td><button type="button" name="tinh" value ="*" onclick="nhapSo('*')">x</button></td>
+  </tr>
+  <tr>
+    <td><button type="button" onclick="xoa()">C</button> </td>
+    <td><button type="button" name="so" value="0" onclick="nhapSo('0')">0</button></td>
+    <td><button type="button" value="=" onclick="tinhToan()">=</button></td>
+    <td><button type="button" name="tinh" value ="/" onclick="nhapSo('/')">/</button></td>
+  </tr>
+</table>
+</body>
+</html>

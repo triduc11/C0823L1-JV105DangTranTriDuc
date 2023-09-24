@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ChuyenDoiDai</title>
+</head>
+<body>
+<label><input type="number" id="m" value="m" placeholder="Hãy nhập độ dài cần chuyển đổi"></label>
+<button onclick="chuyenDoi()">Chuyen Doi</button>
+<p id="result">Result:</p>
+<script>
+  function chuyenDoi() {
+    let m = +document.getElementById("m").value  ;
+    let f = m*3.2808 ;
+    document.getElementById("result").innerHTML = "Result: " + f +" feet" ;
+  }
+</script>
+</body>
+</html>

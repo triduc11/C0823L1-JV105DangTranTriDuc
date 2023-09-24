@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Thuế</title>
+</head>
+<body>
+<label><input id="money" type="number" value="money" placeholder="Hây nhập số tiền của bạn"></label>
+<button onclick="tinhTien()">TinhTien</button>
+<p id="result">Result:</p>
+<script>
+    function tinhTien() {
+        let money=+document.getElementById("money").value ;
+        let result ;
+        if (money>0) {
+            if (money<60000000) {
+                result = "Tiền thuế phải nộp là " + (money*0.05) ;
+            } else if (money>60000000 && money<120000000) {
+                result = "Tiền thuế phải nộp là " + (money*0.1) ;
+            } else if (money>200000000 && money<300000000) {
+                result = "Tiền thuế phải nộp là " + (money*0.15) ;
+            } else {
+                result = "Tiền thuế phải nộp là " + (money*0.2) ;
+            }
+        } else {
+            result ="Bạn đã nhập sai giá trị"
+        }
+        document.getElementById("result").innerHTML = result ;
+    }
+</script>
+</body>
+</html>
