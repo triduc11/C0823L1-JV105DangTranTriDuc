@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trái tim đơn giản</title>
+</head>
+<body>
+<script>
+  // var canvas = document.getElementById("myCanvas");
+  // var context = canvas.getContext("2d");
+  //
+  // var centerX = canvas.width / 2;
+  // var centerY = canvas.height / 2;
+  // var radius = 70;
+  // var angle = 0;
+  //
+  // context.beginPath();
+  //
+  // // Vẽ trái tim bằng vòng lặp
+  // for (var i = 0; i <= 2; i += 0.01) {
+  //   angle = i * Math.PI;
+  //   var x = radius * (16 * Math.pow(Math.sin(angle), 3));
+  //   var y = -radius * (13 * Math.cos(angle) - 5 * Math.cos(2 * angle) - 2 * Math.cos(3 * angle) - Math.cos(4 * angle));
+  //   context.lineTo(centerX + x, centerY + y);
+  // }
+  //
+  // context.closePath();
+  // context.fillStyle = "black";
+  // context.fill();
+  //
+  //
+  // var canvas = document.getElementById("myCanvas");
+  // var context = canvas.getContext("2d");
+  //
+  // var centerX = canvas.width / 2;
+  // var centerY = canvas.height / 2;
+  // var radius = 70;
+  //
+  // // Vẽ hình tròn trên bên trái
+  // context.beginPath();
+  // context.arc(centerX - radius / 2, centerY, radius / 2, 0, Math.PI * 2);
+  // context.closePath();
+  // context.fillStyle = "red";
+  // context.fill();
+  //
+  // // Vẽ hình tròn trên bên phải
+  // context.beginPath();
+  // context.arc(centerX + radius / 2, centerY, radius / 2, 0, Math.PI * 2);
+  // context.closePath();
+  // context.fill();
+  //
+  // // Vẽ hình chữ nhật dưới trái tim
+  // context.beginPath();
+  // context.rect(centerX - radius, centerY, radius * 2, radius);
+  // context.closePath();
+  // context.fill();
+  //
+  //
+  //
+  //
+  // var size = 10; // Kích thước của mỗi dấu *
+  // var rows = size * 2; // Số hàng
+  // var cols = size * 2 + 1; // Số cột
+  // Vẽ hình trái tim
+  // for (var row = 0; row < rows; row++) {
+  //   for (var col = 0; col < cols; col++) {
+  //     if (
+  //             (row < size && (col % size === row || col % size === size - row)) ||
+  //             (row >= size && (col === row - size || col === size * 2 - row))
+  //     ) {
+  //       document.write("*");
+  //     } else {
+  //       document.write("&nbsp;");
+  //     }
+  //   }
+  //   document.write("<br>");
+  // }
+  //
+  //
+  // function drawHeart() {
+  //   var heart = "";
+  //   for (var i = 0; i < 10; i++) {
+  //     if (i % 2 === 0) {
+  //       heart += " *";
+  //     } else {
+  //       heart += " * ";
+  //     }
+  //   }
+  //   console.log(heart);
+  // }
+  //
+  // drawHeart();
+  //
+  //
+  // let n = 6; // kích thước của hình trái tim
+  // let string = "";
+  //
+  // // Vẽ phần trên của hình trái tim
+  // for (let i = 1; i <= n / 2; i++) {
+  //   for (let j = 1; j <= n; j++) {
+  //     if ((i === 1 && j % 3 !== 0) || (i === 2 && j % 3 === 0)) {
+  //       string += "*";
+  //     } else {
+  //       string += " ";
+  //     }
+  //   }
+  //   string += "\n";
+  // }
+  //
+  // // Vẽ phần dưới của hình trái tim
+  // for (let i = Math.floor(n / 2); i >= 1; i--) {
+  //   for (let j = 1; j <= n; j++) {
+  //     if ((i === 1 && j % 3 !== 0) || (i > 1 && j % 3 === 0)) {
+  //       string += "*";
+  //     } else {
+  //       string += " ";
+  //     }
+  //   }
+  //   string += "\n";
+  // }
+  //
+  // document.write(string);
+  //
+  // let heart = "";
+  //
+  // for(let i = 1; i <= 7; i++) {
+  //   if(i === 1 || i === 7) {
+  //     heart += "*****";
+  //   } else if(i === 2 || i === 6) {
+  //     heart += "** **";
+  //   } else if(i === 3 || i === 5) {
+  //     heart += "* * *";
+  //   } else {
+  //     heart += " * * ";
+  //   }
+  //   heart += "\n";
+  // }
+  //
+  // console.log(heart);
+  //
+  // let heart = "";
+  //
+  // const rows = 10;
+  //
+  // for(let i = 0; i < rows; i++) {
+  //
+  //   let line = "";
+  //
+  //   for(let j = 0; j < rows; j++) {
+  //
+  //     if(i === 0 || i === rows-1 || j === i || j === rows-1-i) {
+  //       line += "*";
+  //     } else {
+  //       line += " ";
+  //     }
+  //
+  //   }
+  //
+  //   heart += line + "\n";
+  //
+  // }
+  //
+  // console.log(heart);
+  //
+  //
+  // let heart = "";
+  //
+  // for(let i = 1; i <= 7; i++) {
+  //   for(let j = 1; j <= i; j++) {
+  //     heart += "*";
+  //   }
+  //   heart += "\n";
+  // }
+  //
+  // for(let i = 7; i >= 1; i--) {
+  //   for(let j = 1; j <= i; j++) {
+  //     heart += "*";
+  //   }
+  //   heart += "\n";
+  // }
+  //
+  // console.log(heart);
+  //
+  // let heart = "";
+  //
+  // for(let i = 1; i <= 7; i++) {
+  //   for(let j = 1; j <= i; j++) {
+  //     heart += "*";
+  //   }
+  //   heart += "\n";
+  // }
+  //
+  // for(let i = 7; i >= 1; i--) {
+  //   for(let j = 1; j <= i; j++) {
+  //     heart += "*";
+  //   }
+  //   heart += "\n";
+  // }
+  //
+  // console.log(heart);
+  //
+  //
+  // // Set height and width of heart shape
+  // const height = 10;
+  // const width = 20;
+  //
+  // // Loop through rows
+  // for (let row = 0; row < height; row++) {
+  //
+  //   // Loop through columns
+  //   let line = "";
+  //   for (let col = 0; col < width; col++) {
+  //
+  //     // Calculate distance from center of heart
+  //     let distance = Math.abs(width/2 - col) + Math.abs(height/2 - row);
+  //
+  //     // Add asterisk or space
+  //     if (distance < width/2) {
+  //       line += "*";
+  //     } else {
+  //       line += " ";
+  //     }
+  //   }
+  //
+  //   // Output row
+  //   console.log(line);
+  // }
+  //
+  // let heart = "";
+  //
+  // for(let i = 1; i <= 7; i++) {
+  //   if(i === 1 || i === 7) {
+  //     heart += " * ";
+  //   } else if(i === 2 || i === 6) {
+  //     heart += "* *";
+  //   } else if(i === 3 || i === 5) {
+  //     heart += "* *";
+  //   } else {
+  //     heart += " *";
+  //   }
+  //
+  //   if(i < 7) {
+  //     heart += "\n";
+  //   }
+  // }
+  //
+  // console.log(heart);
+  //
+  // Define the height and width of the heart shape
+  // const height = 10;
+  // const width = 20;
+  //
+  // // Loop through each row
+  // for (let i = 0; i < height; i++) {
+  //
+  //   // Start with an empty string for each row
+  //   let row = "";
+  //
+  //   // Loop through each column
+  //   for (let j = 0; j < width; j++) {
+  //
+  //     // Calculate the distance from the center
+  //     let distance = Math.abs(width/2 - j) + Math.abs(height/2 - i);
+  //
+  //     // If within the heart shape, add *
+  //     if (distance < height/2) {
+  //       row += "*";
+  //     } else {
+  //       row += " ";
+  //     }
+  //
+  //   }
+  //
+  //   // Print the completed row
+  //   console.log(row);
+  //
+  // }
+  //
+  //
+  // let heart = "";
+  //
+  // for(let i = 1; i <= 7; i++) {
+  //   if(i === 1 || i === 7) {
+  //     heart += "*****";
+  //   } else if(i === 2 || i === 6) {
+  //     heart += "****";
+  //   } else if(i === 3 || i === 5) {
+  //     heart += "* *";
+  //   } else {
+  //     heart += "   ";
+  //   }
+  //   heart += "\n";
+  // }
+  //
+  // console.log(heart);
+  //
+  // let heart = '';
+  //
+  // for(let i = 1; i <= 7; i++) {
+  //   // Top part of heart
+  //   if(i <= 3) {
+  //     heart += '*'.repeat(i) + '\n';
+  //   }
+  //   // Bottom part of heart
+  //   else if(i >= 5) {
+  //     heart += '*'.repeat(8-i) + '\n';
+  //   }
+  //   // Middle line
+  //   else {
+  //     heart += '* *\n';
+  //   }
+  // }
+  //
+  // console.log(heart);
+</script>
+</body>
+</html>

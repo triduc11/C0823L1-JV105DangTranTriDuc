@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đoán số</title>
+</head>
+<body>
+<script>
+  let number = +prompt("Số bạn muốn đoán trong khoảng lớn nhất là bao nhiêu?") ;
+  let numberrandom = Math.floor(Math.random() * number);
+  console.log(numberrandom) ;
+  let count=0 ;
+  let numbercheck=0;
+  numbercheck+=prompt("Hãy nhập số mà bạn đoán");
+  while(numbercheck !== numberrandom) {
+    count++ ;
+    if (count===3) {
+      alert("Bạn đã hết số lần đoán rồi !") ;
+      break ;
+    } else if (numbercheck < numberrandom) {
+      alert("Số bạn đoán nhỏ hơn rồi !") ;
+    } else {
+      alert("Số bạn đoán lớn hơn rồi !") ;
+    }
+    numbercheck +=prompt ("Nhập số bạn đoán");
+  }
+  if (count ===3) {
+    document.write("Bạn đã hết số lần đoán rồi !")
+  } else {
+    document.write("Bạn đã đoán đúng số. Chúc mừng bạn!")
+  }
+
+</script>
+
+</body>
+</html>

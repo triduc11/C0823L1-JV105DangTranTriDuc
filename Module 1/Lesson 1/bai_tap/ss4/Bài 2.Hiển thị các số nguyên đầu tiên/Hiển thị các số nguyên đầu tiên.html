@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Các số nguyên tố</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập số snt bạn muốn xuất hiện");
+    let count = 0;
+    let countsnt=0;
+    for (let i = 2; i < 1000; i++) {
+         if (countsnt<n) {
+             for (let j = 1; j <=i; j++) {
+                 if (i % j === 0) {
+                     count++ ;
+                 }
+             }
+             if (count === 2) {
+                 document.write(i + "<br>")
+                 countsnt++;
+             }
+             count=0;
+         }else { break ; }
+    }
+    // let snt = 0;
+    // let i = 0;
+    // while (true) {
+    //     let count = 0;
+    //     if (i < 2) {
+    //         count++;
+    //     }
+    //     for (let j = 2; j < i; j++) {
+    //         if (i % j === 0) {
+    //             count++;
+    //         }
+    //     }
+    //     if (count === 0) {
+    //         console.log(i)
+    //         snt++;
+    //     }
+    //     if(snt >= n) {
+    //         break;
+    //     }
+    //     i++;
+    // }
+
+
+</script>
+</body>
+</html>

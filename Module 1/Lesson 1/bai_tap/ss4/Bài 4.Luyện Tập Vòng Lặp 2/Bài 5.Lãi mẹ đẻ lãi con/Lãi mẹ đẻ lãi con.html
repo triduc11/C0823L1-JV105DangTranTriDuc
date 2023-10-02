@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lãi mẹ đẻ lãi con</title>
+</head>
+<body>
+<script>
+  let tien=+prompt("Hãy nhập số tiên bạn muốn vay") ;
+  let laisuat=+prompt("Nhãy nhập % lãi suất của ngân hàng") ;
+  let nam=+prompt("Hãy nhập số năm mà bạn muốn vay") ;
+  let tong ;
+  tong=Math.floor(tien*(Math.pow((1+(laisuat/100)),nam))) ;
+  document.write(tong);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Heart</title>
+</head>
+<body>
+<script>
+   let n=6 ;
+   for (let row=0 ;row<n ;row++) {
+       for(let col=0;col<n+1;col++) {
+           if ((row === 0 && col % 3 !== 0)
+               || (row === 1 && col % 3 === 0)
+               || (row - col === 2)
+               || (row + col === 8)) {
+             document.write("&nbsp&nbsp&nbsp*") ;
+       } else {
+               document.write("&nbsp&nbsp&nbsp&nbsp&nbsp");
+           }
+       }
+       document.write("<br>") ;
+   }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị số Fibonaci</title>
+</head>
+<body>
+<script>
+  let f0=0 ;
+  let f1=1 ;
+  let f2=0 ;
+  let n=+parseInt(prompt("nhap so so fabonaci")) ;
+    if (n===1) {
+      document.write(f1) ;
+    } else if (n>0)  {
+      for(let i=0 ;i<n;i++) {
+        f0=f1 ;
+        f1=f2 ;
+        f2=f1+f0 ;
+        document.write(f2+ " ");
+      }
+    }
+
+
+
+  // const number = parseInt(prompt('Hãy nhập số số fabonaci: '));
+  // let n0 = 0, n1 = 1, nextTerm;
+  //
+  // document.write(' Dãy Fibonacci :');
+  //
+  // for (let i = 1; i <= number; i++) {
+  //     document.write(n1 + " ") ;
+  //     nextTerm = n0+n1;
+  //     n0 = n1;
+  //     n1 = nextTerm;
+  // }
+</script>
+
+</body>
+</html>

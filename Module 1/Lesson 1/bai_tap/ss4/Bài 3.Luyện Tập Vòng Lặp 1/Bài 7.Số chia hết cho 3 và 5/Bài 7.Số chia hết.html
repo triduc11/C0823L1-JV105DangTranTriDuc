@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chia hết cho 3 và 5</title>
+</head>
+<body>
+<script>
+  let n=parseInt(prompt("Hãy nhập số")) ;
+  for (let i=1 ;i<=n;i++) {
+    if (i%3===0 && i%5===0) {
+      document.write("FizzBuzz" + "<br>");
+    } else if (i%3===0) {
+      document.write("Fizz" + "<br>") ;
+      } else if (i%5===0) {
+      document.write("Buzz" + "<br>") ;
+    } else document.write(i + "<br>") ;
+  }
+</script>
+</body>
+</html>
