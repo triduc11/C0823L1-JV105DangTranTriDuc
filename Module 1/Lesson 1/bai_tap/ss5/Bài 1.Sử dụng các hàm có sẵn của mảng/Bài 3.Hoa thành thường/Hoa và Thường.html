@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi chữ</title>
+</head>
+<body>
+<script>
+    const str = window.prompt();
+    // let result = str.split("")
+    let result = []
+    console.log(result)
+
+    // for (let i = 0; i < result.length; i++) {
+    //     if (result[i] === result[i].toLowerCase()) {
+    //         result[i] = result[i].toUpperCase();
+    //     } else {
+    //         result[i] = result[i].toLowerCase()
+    //     }
+    // }
+
+    for (let i = 0; i <= str.length - 1; i++) {
+        if (str)
+        if ((str[i] < "Z") && (str[i] > "A")) {
+            result.push(str[i].toLowerCase());
+        } else if ((str[i] < "z") && (str[i] > "a")) {
+            result.push(str[i].toUpperCase());
+        }
+    }
+    document.writeln(result.join(''));
+</script>
+</body>
+</html>

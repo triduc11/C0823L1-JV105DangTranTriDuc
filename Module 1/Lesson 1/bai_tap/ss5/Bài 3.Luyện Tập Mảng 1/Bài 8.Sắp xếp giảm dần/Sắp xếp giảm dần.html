@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hiển thị số</title>
+  <style>
+    body {padding-top:50px}
+  </style>
+</head>
+<body>
+<label><input type="number" id="num" placeholder="Hãy nhập số bạn muốn"></label>
+<input type="button" id="Add" onclick="nhapSo()" value="Nhập Số">
+<input type="button" id="Display" onclick="xuatSo()" value="Xuất Số">
+<p id="Result"></p>
+<script>
+  let i = 0;
+  let array = Array();
+  function nhapSo() {
+    array[i]=document.getElementById("num").value ;
+    i++ ;
+    document.getElementById("num").value="";
+  }
+  function xuatSo(){
+    let e="<hr/>" ;
+    for(let i=0 ;i<=array.length-1;i++){
+        array.sort(function (a,b) { return b-a}) ; // sử dụng để sắp xếp tăng dần hoặc giảm dần
+        e += "Element " + i + " = " + array[i] + "<br/>";
+      }
+    document.getElementById("Result").innerHTML = e;
+    }
+</script>
+</body>
+</html>

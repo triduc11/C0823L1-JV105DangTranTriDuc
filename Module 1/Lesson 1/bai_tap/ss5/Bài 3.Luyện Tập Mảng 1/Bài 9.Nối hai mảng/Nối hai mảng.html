@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hiển thị số</title>
+  <style>
+    body {padding-top:50px}
+  </style>
+</head>
+<body>
+<label><input type="number" id="num1" placeholder="Hãy nhập số vào mảng 1"></label>
+<input type="button" id="Add1" onclick="nhapSo1()" value="Nhập Số">
+<label><input type="number" id="num2" placeholder="Hãy nhập số vào mảng 2"></label>
+<input type="button" id="Add2" onclick="nhapSo2()" value="Nhập Số">
+<input type="button" id="Display" onclick="xuatSo()" value="Xuất Số">
+<p id="Result"></p>
+<script>
+  let array2 = Array();
+  let array1 = Array();
+  let array3 = Array();
+  let x = 0;
+  let i = 0;
+  function nhapSo1() {
+    array1[i]=document.getElementById("num1").value ;
+    i++ ;
+    document.getElementById("num1").value="";
+  }
+  function nhapSo2() {
+    array2[x]=document.getElementById("num2").value ;
+    x++ ;
+    document.getElementById("num2").value="";
+  }
+  function xuatSo(){
+    let e="<hr/>" ;
+     array3 = array1.concat(array2);
+      for(let i=0 ;i<=array3.length-1;i++) {
+        e += "Element " + i + " = " + array3[i] + "<br/>";
+      }
+    document.getElementById("Result").innerHTML =e;
+  }
+
+</script>
+</body>
+</html>

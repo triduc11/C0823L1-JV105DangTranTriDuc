@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo Các Phần Tử</title>
+    <style>
+        body {padding-top:50px}
+    </style>
+</head>
+<body>
+<label><input id="num" placeholder="Hãy nhập số bạn muốn"></label>
+<input type="button" id="Add" onclick="nhapSo()" value="Nhập Số">
+<input type="button" id="Display" onclick="xuatSo()" value="Xuất Số">
+<p id="Result"></p>
+<script>
+    let i = 0;
+    let array = Array();
+    let newarray= Array()
+    function nhapSo() {
+        array[i]=document.getElementById("num").value ;
+        i++ ;
+        document.getElementById("num").value="";
+    }
+    function xuatSo(){
+         newarray=array.reverse();
+        document.getElementById("Result").innerHTML =newarray.join("");
+    }
+
+</script>
+</body>
+</html>

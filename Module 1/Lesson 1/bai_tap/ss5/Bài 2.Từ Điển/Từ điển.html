@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ Điển</title>
+</head>
+<body>
+<label><input type="text" id="trans" placeholder="Hãy nhập từ bạn cần dịch"></label>
+<button onclick="dichNghia()">Dịch</button>
+<p id="Result">Result:</p>
+<script>
+    function dichNghia() {
+        let transVie = ["chuối", "táo", "dưa hấu", "xoài", "dâu"];
+        let transEng = ["banana", "apple", "watermelon", "mango", "strawberry"];
+        let trans = document.getElementById("trans").value;
+        let result = "";
+        for (let i = 0; i <= transVie.length - 1; i++) {
+            if (trans === transVie[i]) {
+                result = transEng[i];
+            }
+        }
+        document.getElementById("Result").innerHTML = "Result: " + result;
+    }
+</script>
+</body>
+</html>

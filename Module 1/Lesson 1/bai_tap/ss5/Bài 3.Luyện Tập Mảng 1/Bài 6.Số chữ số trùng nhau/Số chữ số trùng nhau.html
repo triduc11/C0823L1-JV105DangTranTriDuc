@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hiển thị số</title>
+  <style>
+    body {padding-top:50px}
+  </style>
+</head>
+<body>
+<label><input type="number" id="num" placeholder="Hãy nhập số bạn muốn"></label>
+<input type="button" id="Add" onclick="nhapSo()" value="Nhập Số">
+<label><input type="number" id="num1" placeholder="Hãy nhập số bạn muốn kiểm tra"></label>
+<input type="button" id="Display" onclick="xuatSo()" value="Xuất Số">
+<p id="Result"></p>
+<script>
+  let i = 0;
+  let array = Array();
+  function nhapSo() {
+    array[i]=document.getElementById("num").value ;
+    i++ ;
+    document.getElementById("num").value="";
+  }
+  function xuatSo(){
+    let count=0;
+    let e="<hr/>" ;
+    let n=document.getElementById("num1").value ;
+    document.getElementById("num1").value="";
+    for(let i=0 ;i<=array.length-1;i++){
+      if (array[i]===n) {
+        e += "Element " + i + " = " + array[i] + "<br/>";
+        count++ ;
+      }
+    }
+    document.getElementById("Result").innerHTML =e;
+    alert("Số chữ số trùng với số cần kiểm tra là: "+ count) ;
+  }
+
+</script>
+</body>
+</html>
