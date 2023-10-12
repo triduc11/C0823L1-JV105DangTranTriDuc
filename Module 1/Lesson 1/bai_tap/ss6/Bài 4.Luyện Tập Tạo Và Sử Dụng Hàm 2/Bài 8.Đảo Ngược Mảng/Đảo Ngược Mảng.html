@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kiểm tra</title>
+</head>
+<body>
+<label><input type="text" id="text2" placeholder="Hãy nhập ký tự vào mảng"></label>
+<label><input type="button" onclick="addText()" value="Add"></label>
+<label><input type="button" onclick="checkText()" value="Check"></label>
+<p id="Result">Result:</p>
+<script>
+  let i = 0;
+  let array = Array();
+  let newarray = Array();
+
+  function addText() {
+    array[i] = document.getElementById("text2").value;
+    i++;
+    document.getElementById("text2").value = " ";
+  }
+
+  function checkText() {
+    newarray=array.reverse();
+    for (let i = 0; i <= newarray.length - 1; i++) {
+      document.getElementById("Result").innerHTML =newarray.join(" ");
+    }
+  }
+</script>
+</body>
+</html>
