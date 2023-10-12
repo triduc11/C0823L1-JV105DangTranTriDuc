@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giai thừa</title>
+</head>
+<body>
+<label><input type="number" id="num" placeholder="Hãy nhập vào số bạn muốn"></label>
+<button onclick="thucHienTinh()">Kết Quả</button>
+<p id="Result">Result:</p>
+<script>
+  function thucHienTinh(){
+    let n=+document.getElementById("num").value ;
+    let result ;
+    result=1;
+    for (let i=1;i<=n;i++) {
+      result *=i ;
+    }
+    document.getElementById("Result").innerHTML=result;
+  }
+</script>
+</body>
+</html>

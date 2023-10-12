@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi chổ</title>
+</head>
+<body>
+<label><input type="number" id="num1" placeholder="Hãy nhập số bạn muốn"></label>
+<label><input type="number" id="num2" placeholder="Hãy nhập số bạn muốn"></label>
+<label><input type="button" onclick="handleChangeNumber()" value="Nhập"></label>
+<div id="result"></div>
+<script>
+    function ketQua() {
+        let a = +document.getElementById("num1").value;
+        let b = +document.getElementById("num2").value;
+        let temp = a;
+        a = b;
+        b = temp;
+        return [a, b];
+    }
+
+    function handleChangeNumber() {
+        document.getElementById("result").innerHTML = ketQua().join(" ");
+    }
+</script>
+</body>
+</html>

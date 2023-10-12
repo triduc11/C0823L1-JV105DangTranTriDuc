@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bình Phương</title>
+</head>
+<body>
+<label><input type="number" id="num" placeholder="Hãy nhập vào số bạn muốn"></label>
+<label><input type="button" onclick="tinhToan()" value="Kết Quả"></label>
+<p id="Result">Result:</p>
+<script>
+  function tinhToan() {
+    let n=+document.getElementById("num").value ;
+    let result;
+    result=n*n ;
+    document.getElementById("Result").innerHTML= result ;
+  }
+</script>
+</body>
+</html>

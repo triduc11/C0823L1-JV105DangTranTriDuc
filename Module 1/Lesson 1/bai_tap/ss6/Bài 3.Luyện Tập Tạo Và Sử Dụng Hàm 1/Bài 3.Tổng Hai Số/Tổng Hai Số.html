@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tổng hai số</title>
+</head>
+<body>
+<label><input type="number" id="num1" placeholder="Hãy nhập số bạn muốn" ></label>
+<label><input type="number" id="num2" placeholder="Hãy nhập số bạn muốn" ></label>
+<label><input type="button" onclick="tinhToan()" value="Nhập"></label>
+<div id="result"></div>
+<script>
+  function tinhToan () {
+    let a=+document.getElementById("num1").value ;
+    let b=+document.getElementById("num2").value ;
+    let Result ;
+    if (a>b) {
+      document.getElementById("result").innerHTML="Số thứ nhất lớn hơn số thứ hai" ;
+    } else {
+      Result= a+b ;
+      document.getElementById("result").innerHTML="Result: "+Result ;
+    }
+  }
+</script>
+</body>
+</html>

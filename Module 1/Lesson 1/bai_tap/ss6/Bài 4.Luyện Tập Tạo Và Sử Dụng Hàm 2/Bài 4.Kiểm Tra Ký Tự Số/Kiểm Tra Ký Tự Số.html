@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra Ký Tự Số</title>
+</head>
+<body>
+<label><input id="add" placeholder="Hãy nhập vào ký tự bạn muốn"></label>
+<button onclick="kiemTra()">Kết Quả</button>
+<p id="Result">Result:</p>
+<script>
+    function kiemTra() {
+        let n = document.getElementById("add").value;
+        if (n % 1 === 0) {
+            document.getElementById("Result").innerHTML = "Là ký tự số";
+        } else {
+            document.getElementById("Result").innerHTML = "Không là ký tự số";
+        }
+    }
+</script>
+</body>
+</html>

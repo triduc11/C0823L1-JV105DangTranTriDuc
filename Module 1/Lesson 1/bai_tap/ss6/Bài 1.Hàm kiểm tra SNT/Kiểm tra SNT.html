@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Các số nguyên tố</title>
+</head>
+<body>
+<label><input type="number" id="n" placeholder="Hãy nhập số bạn muốn kiểm tra" ></label>
+<label><input type="button" onclick="kiemTraSNT()" value="Kết quả"></label>
+<div id="result"></div>
+<script>
+    let count = 0;
+    function kiemTraSNT(){
+        let n=document.getElementById("n").value ;
+        document.getElementById("n").value = "";
+        for(let i=1;i<=n;i++) {
+            if (n%i===0) {
+                count++ ;
+            }
+            if(count===2) {
+                document.getElementById("result").innerHTML="Là số nguyên tố";
+            } else document.getElementById("result").innerHTML="Không là số nguyên tố";
+        }
+        return n;
+    }
+</script>
+</body>
+</html>

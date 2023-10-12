@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ngôi sao</title>
+</head>
+<body>
+<label><input type="text" id="star" placeholder="Hãy nhập vào ngôi sao bạn muốn"></label>
+<label><input type="button" onclick="checkStar()" value="Check"></label>
+<p id="Result">Result:</p>
+<script>
+
+    let star1 = ["Polaris"," Aldebaran", "Deneb", "Vega", "Altair", "Dubhe" , "Regulus"] ;
+    let star2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major" , "Leo"] ;
+    function checkStar() {
+        let star=document.getElementById("star").value ;
+        let Result=" " ;
+        for (let i=0 ;i<=star1.length-1;i++) {
+            if(star===star1[i]) {
+                        Result=star2[i] ;
+                    }
+                }
+        document.getElementById("Result").innerHTML=Result ;
+            }
+</script>
+</body>
+</html>

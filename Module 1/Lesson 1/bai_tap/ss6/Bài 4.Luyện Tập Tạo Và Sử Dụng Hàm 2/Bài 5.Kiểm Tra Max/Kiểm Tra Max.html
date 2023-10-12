@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Min</title>
+  <style>
+    body {padding-top:50px}
+  </style>
+</head>
+<body>
+<label><input type="number" id="num" placeholder="Hãy nhập số bạn muốn"></label>
+<input type="button" id="Add" onclick="nhapSo()" value="Nhập Số">
+<input type="button" id="Display" onclick="xuatSo()" value="Xuất Số">
+<p id="Result"></p>
+<script>
+  let i = 0;
+  let array =[];
+  function nhapSo() {
+    array[i]=document.getElementById("num").value ;
+    i++ ;
+    document.getElementById("num").value="";
+  }
+  function xuatSo(){
+    let min=array[0];
+    for(let i=0 ;i<=array.length-1;i++){
+      if (min>array[i]) {
+        min=array[i] ;
+      }
+    }
+    document.getElementById("Result").innerHTML ="Số nhỏ nhất là: "+ min  ;
+  }
+</script>
+</body>
+</html>
