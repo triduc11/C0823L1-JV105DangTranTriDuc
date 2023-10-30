@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="Canvas" width="500" height="600"></canvas>
+<script>
+    class Rectangle {
+        width;
+        height;
+
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        getWidth() {
+            return this.width;
+        }
+
+        getHeight() {
+            return this.height;
+        }
+
+        setWidth(width) {
+            this.width = width;
+        }
+
+        setHeight(height) {
+            this.height = height;
+        }
+
+        getArea() {
+            return this.width * this.height;
+        }
+
+        getPerimeter() {
+            return (this.width + this.height) * 2;
+        }
+
+    }
+
+    let myRectangle = new Rectangle(300, 150);
+
+
+    document.writeln("<br>");
+    myRectangle.setWidth(200);
+    myRectangle.getWidth();
+    document.write(myRectangle.getWidth());
+    document.writeln("<br>");
+
+    myRectangle.setHeight(100);
+    myRectangle.getHeight();
+    document.write(myRectangle.getHeight());
+    document.writeln("<br>");
+
+    document.writeln(myRectangle.getArea());
+    document.writeln("<br>");
+
+    document.writeln(myRectangle.getPerimeter());
+    document.writeln("<br>");
+
+    let width = myRectangle.getWidth();
+    let height = myRectangle.getHeight();
+
+    let canvas = document.getElementById("Canvas");
+    let ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#fa4b2a';
+    ctx.fillRect(10, 10, width, height)
+
+</script>
+</body>
+</html>

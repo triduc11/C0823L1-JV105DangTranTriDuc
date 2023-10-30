@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Xóa chữ số trùng nhau</title>
-  <style>
-    body {padding-top:50px}
-  </style>
+    <meta charset="UTF-8">
+    <title>Xóa chữ số trùng nhau</title>
+    <style>
+        body {
+            padding-top: 50px
+        }
+    </style>
 </head>
 <body>
 <label><input type="number" id="num" placeholder="Hãy nhập số bạn muốn"></label>
@@ -14,23 +16,45 @@
 <input type="button" id="Display" onclick="kiemTra()" value="Xuất Số">
 <p id="Result"></p>
 <script>
-  let i = 0;
-  let array = Array();
-  function nhapSo() {
-    array[i]=document.getElementById("num").value ;
-    i++ ;
-    document.getElementById("num").value="";
-  }
-  function kiemTra() {
-    let n = document.getElementById("num1").value;
-    document.getElementById("num1").value = "";
-    if (array.indexOf(n) !== -1) {    //kiểm tra xem có phần tử nào trong mảng trùng với n không (indexOf)
-      array.splice(array.indexOf(n),1) ; //xóa phần tử (splice)
-      array.push(0);
-      console.log("n thuộc mảng .Mảng sau khi xóa là ", array);
-    } else console.log("n không thuộc mảng .Mảng không thay đổi ", array);
+    let i = 0;
+    let array = Array();
 
-  }
+    function nhapSo() {
+        array[i] = document.getElementById("num").value;
+        i++;
+        document.getElementById("num").value = "";
+    }
+
+    // function kiemTra() {
+    //     let n = document.getElementById("num1").value;
+    //     document.getElementById("num1").value = "";
+    //     if (array.indexOf(n) !== -1) {    //kiểm tra xem có phần tử nào trong mảng trùng với n không (indexOf)
+    //         array.splice(array.indexOf(n), 1); //xóa phần tử (splice)
+    //         array.push(0);
+    //         console.log("n thuộc mảng .Mảng sau khi xóa là ", array);
+    //     } else {
+    //         console.log("n không thuộc mảng .Mảng không thay đổi ", array);
+    //     }
+    //
+    // }
+
+    function kiemTra() {
+        let j = 0;
+        let newArray = Array();
+        let n = document.getElementById("num1").value;
+        document.getElementById("num1").value = "";
+        for (let i = 0; i <= array.length - 1; i++) {
+            if (n !== array[i]) {
+                newArray[j] = array[i];
+                j++;
+            }
+        }
+        if (j < array.length) {
+            console.log("n thuộc mảng .Mảng sau khi xóa là ", newArray);
+        } else {
+            console.log("n không thuộc mảng .Mảng không thay đổi ", newArray);
+        }
+    }
 </script>
 </body>
 </html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả điện thoại</title>
+</head>
+<body>
+<script>
+    class mobilePhone {
+        constructor() {
+            //Có một thông số về trạng thái pin tính bằng đơn vị số nguyên (tối đa 100 đv)
+            this.battery = 100;
+
+            //Có một vùng nhớ dùng để lưu tin nhắn đang soạn thảo , bản nháp tin nhắn.
+            this.draftMessage = ' ';
+
+            //Có một vùng nhớ dùng để lưu tin nhắn trong hộp thư đến.
+            this.inbox = [];
+
+            //Có chức năng dùng để lưu tin nhắn đã gửi.
+            this.sentMessage = [];
+
+            //Có chức năng kiểm tra trạng thái điện thoại bật hay tắt.
+            //Có chức năng bật và tắt điện thoại.
+            this.isPowerOn = false;
+        }
+
+        powerOn() {
+            if (!this.isPowerOn) {
+                this.isPowerOn = true;
+                console.log('Điện thoại đã được bật.');
+            } else {
+                console.log('Điện thoại đã được bật từ trước.');
+            }
+        }
+
+        powerOff() {
+            if (this.isPowerOn) {
+                this.isPowerOn = false;
+                console.log('Điện thoại đã được tắt.');
+            } else {
+                console.log('Điện thoại đã được tắt từ trước.');
+            }
+        }
+
+        //Có chức năng xạc pin điện thoại.
+        chargeBattery() {
+            if (this.battery < 100) {
+                this.battery = 100;
+                console.log('Điện thoại đã được sạc đầy pin.');
+            } else {
+                console.log('Điện thoại đã được sạc đầy pin từ trước.');
+            }
+        }
+
+        //Có chức năng soạn tin nhắn.
+        composeMessage(message) {
+            if (this.isPowerOn) {
+                this.draftMessage = message;
+                console.log('Đã soạn tin nhắn.');
+                this.battery--;
+            } else {
+                console.log('Điện thoại chưa được bật.');
+            }
+        }
+
+        //Có chức năng nhận tin nhắn từ một chiếc mobile khác.
+        receiveMessage(message) {
+            if (this.isPowerOn) {
+                this.inbox.push(message);
+                console.log('Đã nhận tin nhắn mới.');
+                this.battery--;
+            } else {
+                console.log('Điện thoại chưa được bật.');
+            }
+        }
+
+        //Có chức năng kiểm tra hộp thư đến
+        checkInbox() {
+            if (this.isPowerOn) {
+                console.log('Hộp thư đến:');
+                this.inbox.forEach((message, index) => {
+                    console.log(`Tin nhắn ${index + 1}: ${message}`);
+                });
+                this.battery--;
+            } else {
+                console.log('Điện thoại chưa được bật.');
+            }
+        }
+
+        //Có chức năng gửi tin nhắn từ một chiếc mobile khác.
+        sendMessage(phone, message) {
+            if (this.isPowerOn) {
+                //instanceof kiểm tra xem một đối tượng có thuộc lớp nào đó hay không
+                if (phone instanceof mobilePhone) {
+                    phone.receiveMessage(message);
+                    this.sentMessage.push(message);
+                    console.log('Đã gửi tin nhắn.');
+                    this.battery--;
+                } else {
+                    console.log('Không thể gửi tin nhắn. Đối tượng không phải là một chiếc điện thoại.');
+                }
+            } else {
+                console.log('Điện thoại chưa được bật.');
+            }
+        }
+
+        //Có chức năng xem tin đã gửi.
+        checkSentMessages() {
+            if (this.isPowerOn) {
+                console.log('Tin nhắn đã gửi:');
+                this.sentMessage.forEach((message, index) => {
+                    console.log(`Tin nhắn ${index + 1}: ${message}`);
+                });
+                this.battery--;
+            } else {
+                console.log('Điện thoại chưa được bật.');
+            }
+        }
+    }
+
+    //Các bước xử lý tình huống cho hai điện thoại
+
+
+    // Khởi tạo các đối tượng điện thoại
+    const nokia = new mobilePhone();
+    const iphone = new mobilePhone();
+
+    // Kiểm tra trạng thái pin ban đầu
+    console.log('Pin điện thoại Nokia:', nokia.battery);
+    console.log('Pin điện thoại iPhone:', iphone.battery);
+
+    //Sạc pin cho cả hai điện thoại trước khi sử dụng
+    iphone.chargeBattery();
+    nokia.chargeBattery();
+
+    // Bật điện thoại Nokia
+    nokia.powerOn();
+
+    // Soạn tin nhắn trên điện thoại Nokia
+    nokia.composeMessage('Xin chào bạn iPhone!');
+
+    // Gửi tin nhắn từ điện thoại Nokia tới điện thoại iPhone
+    nokia.sendMessage(iphone, nokia.draftMessage);
+
+    //Bật điện thoại Iphone
+    iphone.powerOn();
+
+    // Nhận tin nhắn từ Nokia đến Iphone
+    iphone.receiveMessage('Xin chào bạn iPhone!')
+
+    // Kiểm tra hộp thư đến trên điện thoại iPhone
+    iphone.checkInbox();
+
+    // Kiểm tra trạng thái pin sau khi sử dụng
+    console.log('Pin điện thoại Nokia:', nokia.battery);
+    console.log('Pin điện thoại iPhone:', iphone.battery);
+
+    //Sau khi sử dụng thì tắt cả hai điện thoại
+    iphone.powerOff();
+    nokia.powerOff();
+
+</script>
+</body>
+</html>

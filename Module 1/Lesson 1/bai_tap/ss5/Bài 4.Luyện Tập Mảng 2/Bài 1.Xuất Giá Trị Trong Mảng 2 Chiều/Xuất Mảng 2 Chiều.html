@@ -6,21 +6,26 @@
 </head>
 <body>
 <script>
-  let a = [[1, 2, 1, 24],
-           [8, 11, 9, 4],
-           [7, 0, 7, 27],
-           [7, 4, 28, 14],
-           [3, 10, 26, 7],
-           [5, 7, 28, 19]];
-  for (let i in a)
-  {
-    console.log("row " + i);
-    for (let j in a[i])
-    {
-      console.log(" " + a[i][j]);
+
+    let array = Array();
+    let row = parseInt(prompt("nhap hang"));
+    let col = parseInt(prompt("Nhap cot"));
+    for (let i = 0; i <= row - 1; i++) {
+        let rows = Array();
+        for (let j = 0; j <= col - 1; j++) {
+            let value = parseInt(prompt("Nhap so"));
+            rows.push(value);
+        }
+        array.push(rows);
     }
-  }
-  // việc dùng 2 vòng lặp for bình thường sẽ không tối ưu việc biến i dùng để sử dụng dòng và biến i trong mảng
+
+    console.log(array);
+    for (let i = 0; i <= row - 1; i++) {
+        console.log("row " + (i + 1));
+        for (let j = 0; j <= col - 1; j++) {
+            console.log("" + array[i][j]);
+        }
+    }
 </script>
 </body>
 </html>

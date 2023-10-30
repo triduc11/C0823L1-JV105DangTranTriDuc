@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Trung Bình</title>
-  <style>
-    body {padding-top:50px}
-  </style>
+    <meta charset="UTF-8">
+    <title>Trung Bình</title>
+    <style>
+        body {
+            padding-top: 50px
+        }
+    </style>
 </head>
 <body>
 <label><input type="number" id="num" placeholder="Hãy nhập số bạn muốn"></label>
@@ -14,26 +16,28 @@
 <p id="Result"></p>
 <p id="kq"></p>
 <script>
-  let array =[];
-  let i = 0;
-  function nhapSo() {
-    array[i]=parseInt(document.getElementById("num").value) ;
-    i++ ;
-    document.getElementById("num").value="";
-  }
-  function xuatSo(){
-    let max=array[0];
-    let sum=0;
-    for(let i=0;i<array.length;i++){
-      sum+=array[i];
-      if (max<array[i]) {
-        max=array[i] ;
-      }
-    }
-    document.getElementById("Result").innerHTML ="Số lớn nhất là: "+ max;
-    document.getElementById("kq").innerHTML ="Trung bình cộng là: "+ (sum/array.length) ;
+    let array = [];
+    let i = 0;
 
-  }
+    function nhapSo() {
+        array[i] = parseInt(document.getElementById("num").value);
+        i++;
+        document.getElementById("num").value = "";
+    }
+
+    function xuatSo() {
+        let max = array[0];
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+            sum += array[i];
+            if (max < array[i]) {
+                max = array[i];
+            }
+        }
+        document.getElementById("Result").innerHTML = "Số lớn nhất là: " + max;
+        document.getElementById("kq").innerHTML = "Trung bình cộng là: " + (sum / array.length);
+
+    }
 
 </script>
 </body>

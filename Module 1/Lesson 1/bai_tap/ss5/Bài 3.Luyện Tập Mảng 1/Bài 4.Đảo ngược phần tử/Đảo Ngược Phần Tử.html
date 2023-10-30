@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset=utf-8 />
+    <meta charset=utf-8/>
     <title>Đảo Ngược</title>
     <style>
-        body {padding-top:50px}
+        body {
+            padding-top: 50px
+        }
     </style>
 </head>
 <body>
 <input type="text" id="txtValue"/>
-<input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"/>
-<input type="button" id="btnDisplay" value="Display" onclick="display_array();"/>
+<input type="button" id="btnAdd" value="Add" onclick="addElementToArray();"/>
+<input type="button" id="btnDisplay" value="Display" onclick="displayArray();"/>
 <div id="result"></div>
 <script>
     let i = 0;
     let array = [];
-    function add_element_to_array() {
+
+    function addElementToArray() {
         array[i] = document.getElementById("txtValue").value;
         i++;
         document.getElementById("txtValue ").value = "";
     }
-    function display_array() {
-        let newarray= array.reverse() ;
+
+    // function displayArray() {
+    //     let newArray= array.reverse() ;
+    //     let e = "<hr/>";
+    //     for (let i = 0; i < newArray.length; i++) {
+    //         e += "Element " + i + " = " + newArray[i] + "<br/>";
+    //     }
+    //     document.getElementById("result").innerHTML =e;
+    // }
+
+    function displayArray() {
         let e = "<hr/>";
-        for (let i = 0; i < newarray.length; i++) {
-            e += "Element " + i + " = " + newarray[i] + "<br/>";
+        for (let i = array.length-1; i >=0; i--) {
+            e += "Element = " + array[i] + "<br/>";
         }
-        document.getElementById("result").innerHTML =e;
+        document.getElementById("result").innerHTML = e;
     }
 </script>
 </body>

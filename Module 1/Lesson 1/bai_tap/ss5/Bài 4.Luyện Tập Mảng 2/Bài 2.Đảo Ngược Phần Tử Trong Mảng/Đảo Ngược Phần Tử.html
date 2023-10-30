@@ -15,15 +15,22 @@
 <script>
     let i = 0;
     let array = Array();
-    let newarray= Array()
+    // let newarray= Array()
     function nhapSo() {
         array[i]=document.getElementById("num").value ;
         i++ ;
         document.getElementById("num").value="";
     }
-    function xuatSo(){
-         newarray=array.reverse();
-        document.getElementById("Result").innerHTML =newarray.join("");
+    // function xuatSo(){
+    //      newarray=array.reverse();
+    //     document.getElementById("Result").innerHTML =newarray.join("");
+    // }
+    function xuatSo() {
+        let e = "<hr/>";
+        for (let i = array.length-1; i >=0; i--) {
+            e += "Element = " + array[i] + "<br/>";
+        }
+        document.getElementById("result").innerHTML = e;
     }
 
 </script>

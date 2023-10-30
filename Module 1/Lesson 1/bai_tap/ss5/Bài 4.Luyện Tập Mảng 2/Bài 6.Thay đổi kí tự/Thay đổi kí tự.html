@@ -9,19 +9,19 @@
 </head>
 <body>
 <label><input  id="txtValue"/></label>
-<input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"/>
-<input type="button" id="btnDisplay" value="Display" onclick="display_array();"/>
+<input type="button" id="btnAdd" value="Add" onclick="addElementToArray();"/>
+<input type="button" id="btnDisplay" value="Display" onclick="displayArray();"/>
 <div id="result"></div>
 <script>
   let i = 0;
   let array = Array();
-  function add_element_to_array() {
+  function addElementToArray() {
     array[i] = document.getElementById("txtValue").value;
     alert("Element: " + array[i] + " Added at index " + i);
     i++;
     document.getElementById("txtValue ").value = "";
   }
-  function display_array() {
+  function displayArray() {
     let e = "<hr/>";
     for (let i = 0; i < array.length; i++) {
       if (array[i]==='-') {
