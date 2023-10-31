@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<label><input type="number" id="text1" placeholder="Nhập giá trị vào mảng 1"></label>
+<label><input type="button" id="Add1" value="Add1" onclick="addElementToArray1();"/></label>
+<label><input type="number" id="text2" placeholder="Nhập giá trị vào mảng 2"></label>
+<label><input type="button" id="Add2" value="Add2" onclick="addElementToArray2();"/></label>
+<label><input type="button" id="Display" value="Display" onclick="displayArray();"/></label>
+<div id="result"></div>
+<script>
+
+    let i = 0, j = 0;
+    let a = Array();
+    let b = Array();
+    let c = Array();
+
+    function addElementToArray1() {
+        a[i] = parseInt(document.getElementById("text1").value);
+        i++;
+        document.getElementById("text1").value = " ";
+    }
+
+    function addElementToArray2() {
+        b[j] = parseInt(document.getElementById("text2").value);
+        j++;
+        document.getElementById("text2").value = " ";
+    }
+
+    function displayArray() {
+        let count = 0;
+        let e = "<hr/>";
+
+        for (let i = 0; i <= a.length - 1; i++) {
+            for (let j = 0; j <= b.length - 1; j++) {
+                if (a[i] === b[j]) {
+                    c.push(a[i]);
+                }
+            }
+        }
+
+        for (let i = 0; i <= c.length - 1; i++) {
+            count = 0;
+            for (let j = 0; j <= c.length - 1; j++) {
+                if (c[i] === c[j]) {
+                    count++;
+                    if (count >= 2) {
+                        c.splice(j, 1);
+                        count--;
+                    }
+                }
+            }
+        }
+
+        for (let i = 0; i <= c.length - 1; i++) {
+            e += c[i] + " ";
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+</script>
+</body>
+</html>

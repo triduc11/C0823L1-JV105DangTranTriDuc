@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<label><input id="money" type="number" value="money" placeholder="Hãy nhập lương của bạn"></label>
+<button onclick="nhapSo()">KiemTra</button>
+<p id="Result">Result:</p>
+<script>
+  function nhapSo () {
+    let n = document.getElementById("money").value;
+    let salary=0 ;
+    if(n>0) {
+      if(n<7000000) {
+        salary=n-(n*0.05) ;
+        document.getElementById("Result").innerHTML="Result:"+"<br>"+"Thuế thu nhập của bạn là: 5%" +"<br>"+"Tiền lương của bạn là: "+salary+"VNĐ" ;
+      } else if (n>=7000000 && n<=15000000) {
+        salary=n-(n*0.1);
+        document.getElementById("Result").innerHTML="Result:"+"<br>"+"Thuế thu nhập của bạn là: 10%" +"<br>"+"Tiền lương của bạn là: "+salary+"VNĐ" ;
+      } else {
+        salary=n-(n*0.2);
+        document.getElementById("Result").innerHTML="Result:"+"<br>"+"Thuế thu nhập của bạn là: 20%" +"<br>"+"Tiền lương của bạn là: "+salary+"VNĐ" ;
+      }
+    } else {
+      document.getElementById("Result").innerHTML="Bạn đã nhập sai giá trị" ;
+    }
+    return 0;
+  }
+</script>
+</body>
+</html>

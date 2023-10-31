@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<label><input type="text" id="txtValue"/></label>
+<label><input type="button" id="Add" value="Add" onclick="addElementToArray();"/></label>
+<label><input type="button" id="Display" value="Display" onclick="displayArray();"/></label>
+<div id="result"></div>
+<script>
+    let i = 0;
+    let a = Array();
+
+    function addElementToArray() {
+        a[i] =parseInt(document.getElementById("txtValue").value);
+        i++;
+        document.getElementById("txtValue ").value = "";
+    }
+
+    // function prefixSums() {
+    //     let b = Array();
+    //     b.push(a[0]);
+    //     for (let i = 1; i < a.length ; i++) {
+    //         b.push(b[i - 1] + a[i]);
+    //     }
+    //     return b;
+    // }
+
+    function displayArray() {
+        let b = Array();
+        let e = "<hr/>";
+        b.push(a[0]);
+        for (let i = 1; i < a.length ; i++) {
+            b.push(b[i - 1] + a[i]);
+        }
+        for (let i = 0; i < b.length; i++) {
+            e += b[i] + " " ;
+        }
+        document.getElementById("result").innerHTML = e;
+        return b ;
+    }
+</script>
+</body>
+</html>
