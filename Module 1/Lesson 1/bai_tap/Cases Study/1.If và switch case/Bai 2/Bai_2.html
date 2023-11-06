@@ -5,26 +5,27 @@
     <title>Bài 2</title>
 </head>
 <body>
-<label><input type="text" id="text"  placeholder="Hãy nhập chữ cái bạn muốn kiểm tra"></label>
+<label><input type="text" id="text" placeholder="Hãy nhập chữ cái bạn muốn kiểm tra"></label>
 <button onclick="nhapKiTu()">KiemTra</button>
 <p id="Result">Result:</p>
 <script>
-  let array=["u","e","o","a","i","U","E","O","A","I"] ;
-  let count=0 ;
-  function nhapKiTu () {
-    let n=document.getElementById("text").value ;
-    for(let i=0; i<=array.length-1;i++) {
-      if(n===array[i]) {
-        count++ ;
-      }
-      if(count===1) {
-        document.getElementById("Result").innerHTML="Result: Là nguyên âm" ;
-      } else {
-        document.getElementById("Result").innerHTML="Result: Là phụ âm";
-      }
+    let array = ["u", "e", "o", "a", "i", "U", "E", "O", "A", "I"];
+    let count = 0;
+
+    function nhapKiTu() {
+        let n = document.getElementById("text").value;
+        for (let i = 0; i <= array.length - 1; i++) {
+            if (n === array[i]) {
+                count++;
+            }
+            if (count === 1) {
+                document.getElementById("Result").innerHTML = "Result: Là nguyên âm";
+            } else {
+                document.getElementById("Result").innerHTML = "Result: Là phụ âm";
+            }
+        }
+        return 0;
     }
-    return 0;
-  }
 </script>
 </body>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai3</title>
+</head>
+<body>
+<script>
+    function commonCharacterCount(s1, s2) {
+        let a = newarray();
+        let b = newarray();
+        for (let i = 0; i < s1.length; i++) {
+            let index = s1[i].charCodeAt(0);
+            if (a[index] === undefined) {
+                a[index] = 1;
+                continue;
+            }
+            a[index]++;
+        }
+        for (let i = 0; i < s2.length; i++) {
+            let index = s2[i].charCodeAt(0);
+            if (b[index] === undefined) {
+                b[index] = 1;
+                continue;
+            }
+            b[index]++;
+        }
+        let d = 0;
+        for (let i = 97; i <= 122; i++) {
+            if (!isNaN(a[i]) && !isNaN(b[i])) {
+                d += Math.min(a[i], b[i]);
+            }
+        }
+        return d;
+    }
+    let s1 = prompt("Nhập chuỗi s1: ");
+    let s2 = prompt("Nhập chuỗi s2: ");
+    console.log(commonCharacterCount(s1, s2));
+</script>
+</body>
+</html>

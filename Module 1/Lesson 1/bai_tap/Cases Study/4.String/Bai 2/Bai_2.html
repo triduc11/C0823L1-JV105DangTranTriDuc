@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>differentSymbolsNaive</title>
+</head>
+<body>
+<script>
+  function differentSymbolsNaive(s) {
+    let b = newarray(256).fill(false);
+    for (let i = 0; i < s.length; i++) {
+      b[s[i]] = true;
+    }
+    let d = 0;
+    for (let i = 0; i < s.length; i++) {
+      if (b[s[i]]) {
+        d++;
+        b[s[i]] = false;
+      }
+    }
+    return d;
+  }
+  let s = prompt("Nhập chuỗi: ");
+  console.log(differentSymbolsNaive(s));
+</script>
+</body>
+</html>

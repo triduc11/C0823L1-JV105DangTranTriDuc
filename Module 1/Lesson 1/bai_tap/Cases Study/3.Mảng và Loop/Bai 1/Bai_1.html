@@ -11,7 +11,7 @@
 <div id="result"></div>
 <script>
     let i = 0;
-    let a = Array();
+    let a = newarray();
 
     function addElementToArray() {
         a[i] =parseInt(document.getElementById("txtValue").value);
@@ -29,7 +29,7 @@
     // }
 
     function displayArray() {
-        let b = Array();
+        let b = newarray();
         let e = "<hr/>";
         b.push(a[0]);
         for (let i = 1; i < a.length ; i++) {

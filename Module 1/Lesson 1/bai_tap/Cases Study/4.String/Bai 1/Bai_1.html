@@ -10,40 +10,32 @@
 <label><input type="button" id="Add2" value="Result" onclick="Result();"/></label>
 <div id="result"></div>
 <script>
-    let s = Array();
+    let string = '';
+    let s = [];
     let i = 0;
-    let e=Array() ;
+    let e=newarray();
 
     function addString() {
-        s[i] = document.getElementById("text1").value;
-        i++;
-        document.getElementById("text1").value = " ";
+        string = document.getElementById("text1").value;
+        s = string.split("");
     }
 
 
     function Result() {
         for (let i = 0; i <= s.length - 1; i++) {
             if (s[i] >= 'A' && s[i] <= 'Z') {
-                s[i] += 32;
+                s[i]= s[i].toLowerCase();
             }
         }
         if (s[0] >= 'a' && s[0] <= 'z') {
-            s[0] -= 32;
+            s[0] = s[i].toUpperCase();
         }
-        for (let i = 0; i <= s.length - 1; i++) {
-            if ((s[i] >= 'a' && s[i] <= 'z') && (s[i + 1] = " ")) {
-                s[i] -= 32;
-            }
-            if ((s[i] = " ") && (s[i + 1] = " ")) {
-                s.splice(i, 1);
+        for (let i = 1; i < s.length ; i++) {
+            if ((s[i] >= 'a' && s[i] <= 'z') && (s[i - 1] === " ")) {
+                s[i] = s[i].toUpperCase();
             }
         }
-
-        for(let i=0 ;i<=s.length-1;i++) {
-            e[i] += c[i] ;
-        }
-        document.getElementById("result").innerHTML = "Result"+ e;
-        return e;
+        document.getElementById("result").innerHTML = "Result : "+ s.join("");
     }
 </script>
 </body>
