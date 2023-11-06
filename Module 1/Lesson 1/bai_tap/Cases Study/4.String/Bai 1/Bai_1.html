@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<label><input type="text" id="text1" placeholder="Hãy nhập chuỗi bạn muốn"></label>
+<label><input type="button" id="Add1" value="Add" onclick="addString();"/></label>
+<label><input type="button" id="Add2" value="Result" onclick="Result();"/></label>
+<div id="result"></div>
+<script>
+    let s = Array();
+    let i = 0;
+    let e=Array() ;
+
+    function addString() {
+        s[i] = document.getElementById("text1").value;
+        i++;
+        document.getElementById("text1").value = " ";
+    }
+
+
+    function Result() {
+        for (let i = 0; i <= s.length - 1; i++) {
+            if (s[i] >= 'A' && s[i] <= 'Z') {
+                s[i] += 32;
+            }
+        }
+        if (s[0] >= 'a' && s[0] <= 'z') {
+            s[0] -= 32;
+        }
+        for (let i = 0; i <= s.length - 1; i++) {
+            if ((s[i] >= 'a' && s[i] <= 'z') && (s[i + 1] = " ")) {
+                s[i] -= 32;
+            }
+            if ((s[i] = " ") && (s[i + 1] = " ")) {
+                s.splice(i, 1);
+            }
+        }
+
+        for(let i=0 ;i<=s.length-1;i++) {
+            e[i] += c[i] ;
+        }
+        document.getElementById("result").innerHTML = "Result"+ e;
+        return e;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        isEmpty() {
+            if (this.weight <= 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        decreaseApple() {
+            if (this.isEmpty()) {
+                alert("Táo đã hết rồi");
+            } else {
+                this.weight--;
+            }
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName() {
+            this.name = name;
+        }
+        getWeight() {
+            return this.weight ;
+        }
+        setWeight() {
+            this.weight= weight ;
+        }
+
+        isMale() {
+            if (this.gender = "Male") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        setGender() {
+            if (this.isMale()) {
+                return "Male";
+            } else {
+                return "Female";
+            }
+        }
+
+
+    }
+</script>
+</body>
+</html>

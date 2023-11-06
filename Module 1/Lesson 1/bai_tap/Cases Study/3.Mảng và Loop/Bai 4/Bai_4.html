@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chương trình gọi thức uống</title>
+  <script>
+    function orderDrink() {
+      let menu = {
+        1: { name: "Cafe", price: 20000 },
+        2: { name: "Cam vắt", price: 25000 },
+        3: { name: "Nước ép cà rốt", price: 30000 },
+        4: { name: "Nước ép cà chua", price: 30000 },
+        5: { name: "Nước lọc", price: 10000 },
+        6: { name: "Nước dừa", price: 15000 }
+      };
+
+      let total = 0;
+      let order = "";
+      let choice;
+
+      do {
+        choice = parseInt(prompt("Menu:\n1. Cafe\n2. Cam vắt\n3. Nước ép cà rốt\n4. Nước ép cà chua\n5. Nước lọc\n6. Nước dừa\n7. Thoát gọi món"));
+
+        if (choice >= 1 && choice <= 6) {
+          let quantity = parseInt(prompt("Nhập số lượng:"));
+          let drink = menu[choice];
+          let price = drink.price;
+          let subtotal = price * quantity;
+          total += subtotal;
+          order += drink.name + " x " + quantity + " = " + subtotal + " VNĐ\n";
+        }
+      } while (choice !== 7);
+
+      alert("Đơn hàng của bạn:\n\n" + order + "\nTổng số tiền: " + total + " VNĐ");
+    }
+  </script>
+</head>
+<body>
+<h1>Chương trình gọi thức uống</h1>
+<button onclick="orderDrink()">Gọi thức uống</button>
+</body>
+</html>
