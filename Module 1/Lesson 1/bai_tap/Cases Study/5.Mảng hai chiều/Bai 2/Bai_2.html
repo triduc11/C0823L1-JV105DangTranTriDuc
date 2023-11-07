@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai_2</title>
+</head>
+<body>
+<script>
+    let rows = prompt("Nhập hàng");
+    let cols = prompt("Nhập cột");
+    let n;
+    let count = 0;
+
+    let array = [];
+
+
+    for (let i = 0; i < rows; i++) {
+        array[i] = [];
+        for (let j = 0; j < cols; j++) {
+            n = parseInt(prompt(`Nhập giá trị cho phần tử ở hàng ${i + 1}, cột ${j + 1}`));
+            array[i][j] = n;
+            if (array[i][j] > 1) {
+                for (let k = 2; k <= Math.sqrt(array[i][j]); k++) {
+                    if (array[i][j] % k !== 0) {
+                        count++;
+                    }
+                }
+            }
+        }
+    }
+    console.log(count);
+
+
+</script>
+</body>
+</html>

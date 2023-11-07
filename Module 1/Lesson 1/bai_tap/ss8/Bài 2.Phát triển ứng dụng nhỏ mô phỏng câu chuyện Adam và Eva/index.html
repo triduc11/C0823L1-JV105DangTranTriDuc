@@ -50,22 +50,24 @@
         setName() {
             this.name = name;
         }
+
         getWeight() {
-            return this.weight ;
+            return this.weight;
         }
+
         setWeight() {
-            this.weight= weight ;
+            this.weight = weight;
         }
 
         isMale() {
-            if (this.gender = "Male") {
+            if (this.gender === 1) {
                 return true;
             } else {
                 return false;
             }
         }
 
-        setGender() {
+        getGender() {
             if (this.isMale()) {
                 return "Male";
             } else {
@@ -73,8 +75,56 @@
             }
         }
 
+        say(string) {
+            console.log(string);
+        }
 
+        checkApple(apple) {
+            return apple.isEmpty();
+        }
+
+        eat(apple) {
+            if (apple.getWeight() > 0) {
+                apple.decreaseApple();
+                this.weight++;
+            } else {
+                alert("Táo đã hết");
+            }
+        }
+
+        getInfo(human) {
+            alert(human.name + " " + human.weight + " " + human.getGender());
+        }
     }
+
+    let adam = new Human("adam", 1, 65);
+    let eva = new Human("eva", 2, 55);
+    let apple1 = new Apple(10);
+
+    adam.say("I am Adam" + "<br>");
+    eva.say("I am Eva" + "<br>");
+
+    while (apple1.isEmpty() !== true) {
+        document.write("Adam ăn táo" + "<br>");
+        adam.eat(apple1);
+
+        document.write("Quả táo còn: " + "<br>");
+        document.write(apple1.getWeight() + " đơn vị" + "<br>");
+        document.write("Cân nặng của Adm là: " + adam.getWeight() + " đơn vị" + "<br>");
+
+        document.write("<br>")
+
+        document.write("Eva ăn táo" + "<br>");
+        eva.eat(apple1);
+
+        document.write("Quả táo còn: " + "<br>");
+        document.write(apple1.getWeight() + " đơn vị" + "<br>");
+        document.write("Cân nặng là: " + eva.getWeight() + " đơn vị" + "<br>");
+    }
+
+    document.write(adam.checkApple(apple1));
+
+
 </script>
 </body>
 </html>

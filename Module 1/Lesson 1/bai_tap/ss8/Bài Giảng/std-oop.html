@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container m-2">
+      <div>
+        <input type="text" id="id" placeholder="id" />
+        <input hidden type="text" id="idHidden" placeholder="id" />
+        <input type="text" id="code" placeholder="code" />
+        <input type="text" id="name" placeholder="name" />
+        <button onclick="handleAddNewStudent()" class="btn btn-outline-primary">
+          Add
+        </button>
+        <button onclick="handleUpdateStudent()" class="btn btn-outline-warning">
+          Update
+        </button>
+        <div class="alert alert-primary" role="alert">
+          A simple primary alert—check it out!
+        </div>
+      </div>
+      <div id="root"></div>
+    </div>
+    <script>
+      class Student {
+        constructor(id, code, name) {
+          this.id = id;
+          this.code = code;
+          this.name = name;
+        }
+
+        getId() {
+          return this.id;
+        }
+
+        setId(id) {
+          this.id = id;
+        }
+
+        getCode() {
+          return this.code;
+        }
+
+        setCode(code) {
+          this.code = code;
+        }
+
+        getName() {
+          return this.name;
+        }
+
+        setName(name) {
+          this.name = name;
+        }
+      }
+      let students = [];
+
+      let phuongTD = new Student(1, "HV-123", "PhuongTD");
+      let chanhTV = new Student();
+      chanhTV.setId(2);
+      chanhTV.setCode("HV-456");
+      chanhTV.setName("ChanhTV");
+      let haiTT = new Student(3, "HV-789", "HaiTT");
+
+      students.push(phuongTD);
+      students.push(chanhTV);
+      students.push(haiTT);
+
+      //Hien thi
+      function displayStudents() {
+        let studentData = `<table border="1" class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>`;
+        for (let i = 0; i < students.length; i++) {
+          const student = students[i];
+          studentData += `<tr>
+            <td>${student.getId()}</td>
+            <td>${student.getCode()}</td>
+            <td>${student.getName()}</td>
+            <td>
+              <button onclick="handleShowEditStudent(${student.getId()})">Edit</button>
+            </td>
+            <td>
+              <button onclick="handleDeleteStudent(${student.getId()})">Delete</button>
+            </td>
+          </tr>`;
+        }
+        studentData += `</tbody>
+    </table>`;
+        document.getElementById("root").innerHTML = studentData;
+      }
+      displayStudents();
+
+      //Xoa
+      function handleDeleteStudent(studentId) {
+        let index = -1;
+        for (let i = 0; i < students.length; i++) {
+          const student = students[i];
+          if (student.getId() === studentId) {
+            index = i;
+            break;
+          }
+        }
+        if (index === -1) {
+          alert("Khong tim thay");
+        } else {
+          const confirmDelete = confirm(
+            `Ban co muon xoa sinh vien ${students[index].getName()} khong?`
+          );
+          if (confirmDelete) {
+            students.splice(index, 1);
+            displayStudents();
+          }
+        }
+      }
+
+      //Them moi
+      function handleAddNewStudent() {
+        let id = document.getElementById("id").value;
+        let code = document.getElementById("code").value;
+        let name = document.getElementById("name").value;
+        let student = new Student(id, code, name);
+        console.log(student);
+        students.push(student);
+        displayStudents();
+        document.getElementById("id").value = "";
+        document.getElementById("code").value = "";
+        document.getElementById("name").value = "";
+      }
+
+      //Chinh sua
+      function handleShowEditStudent(studentId) {
+        let index = -1;
+        for (let i = 0; i < students.length; i++) {
+          const student = students[i];
+          if (student.getId() === studentId) {
+            index = i;
+            break;
+          }
+        }
+        if (index === -1) {
+          alert("Khong tim thay");
+        } else {
+          document.getElementById("idHidden").value = students[index].getId();
+          document.getElementById("code").value = students[index].getCode();
+          document.getElementById("name").value = students[index].getName();
+          //Hidden input
+          document.getElementById("id").style.display = "none";
+        }
+      }
+
+      function handleUpdateStudent() {
+        let id = document.getElementById("idHidden").value;
+        let code = document.getElementById("code").value;
+        let name = document.getElementById("name").value;
+        const index = students.findIndex((std) => std.getId() === +id);
+        if (index === -1) {
+          alert("Khong tim thay");
+        } else {
+          students[index].setCode(code);
+          students[index].setName(name);
+          displayStudents();
+          //Hidden input
+          document.getElementById("id").style.display = "block";
+          document.getElementById("code").value = "";
+          document.getElementById("name").value = "";
+        }
+      }
+    </script>
+
+    <script>
+      let a = "Hello world";
+      let b = "Hello " + 123 + " world";
+      let c = `Hello ${123} world`;
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
