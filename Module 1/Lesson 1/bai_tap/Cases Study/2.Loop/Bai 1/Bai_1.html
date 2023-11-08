@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+<body>
+<script>
+    function drawRec(n) {
+        for (let i = 1; i <= n; i++) {
+            for (let j = 1; j <= i; j++) {
+                if (i === n || j === 1 || j === i) {
+                    document.write("*");
+                } else {
+                    document.write("&nbsp&nbsp");
+                }
+            }
+            document.write("<br>");
+        }
+    }
+
+    let n = parseInt(prompt("Nhap n: "));
+    drawRec(n);
+</script>
+</body>
+</html>
