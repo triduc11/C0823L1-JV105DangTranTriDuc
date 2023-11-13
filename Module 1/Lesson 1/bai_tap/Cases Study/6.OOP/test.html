@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hệ thống quản lý học viên CODEGYM</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+<h2>Hệ thống quản lý học viên CODEGYM</h2>
+
+<table id="studentTable">
+  <tr>
+    <th>Mã học viên</th>
+    <th>Tên</th>
+    <th>Lớp</th>
+    <th>Email</th>
+    <th>Ngày sinh</th>
+    <th>Module</th>
+  </tr>
+</table>
+
+<button onclick="addStudent()">Thêm mới học viên</button>
+<button onclick="editStudent()">Sửa thông tin học viên</button>
+<button onclick="deleteStudent()">Xóa học viên</button>
+
+<script>
+  // Danh sách học viên
+  let students = [];
+
+  // Hiển thị danh sách học viên
+  const displayStudents = () => {
+    const table = document.getElementById("studentTable");
+
+    // Xóa các dòng cũ trong bảng
+    while (table.rows.length > 1) {
+      table.deleteRow(1);
+    }
+
+    // Thêm thông tin học viên mới vào bảng
+    students.forEach((student) => {
+      const row = table.insertRow(-1);
+      row.insertCell(0).innerHTML = student.maHocVien;
+      row.insertCell(1).innerHTML = student.ten;
+      row.insertCell(2).innerHTML = student.lop;
+      row.insertCell(3).innerHTML = student.email;
+      row.insertCell(4).innerHTML = student.ngaySinh;
+      row.insertCell(5).innerHTML = student.module;
+    });
+  };
+
+  // Thêm mới học viên
+  const addStudent = () => {
+    const maHocVien = prompt("Nhập mã học viên:");
+    const ten = prompt("Nhập tên học viên:");
+    const lop = prompt("Nhập lớp học viên:");
+    const email = prompt("Nhập email học viên:");
+    const ngaySinh = prompt("Nhập ngày sinh học viên:");
+    const module = prompt("Nhập module học viên:");
+
+    // Kiểm tra mã học viên
+    const maHocVienPattern = /^HV-\d{4}$/;
+    if (!maHocVienPattern.test(maHocVien)) {
+      alert("Mã học viên không hợp lệ. Vui lòng nhập lại theo định dạng HV-XXXX (với XXXX là 4 chữ số).");
+      return;
+    }
+
+    // Kiểm tra tên học viên
+    if (ten.length > 50) {
+      alert("Tên học viên không được vượt quá 50 ký tự.");
+      return;
+    }
+
+    // Kiểm tra module
+    const moduleNumber = parseInt(module);
+    if (isNaN(moduleNumber) || moduleNumber < 1 || moduleNumber > 6) {
+      alert("Module không hợp lệ. Vui lòng nhập từ 1 đến 6.");
+      return;
+    }
+
+    // Kiểm tra ngày sinh
+    const ngaySinhPattern = /^\d{2}\/\d{2}\/\d{4}$/;
+    if (!ngaySinhPattern.test(ngaySinh)) {
+      alert("Ngày sinh không hợp lệ. Vui lòng nhập lại theo định dạng dd/mm/yyyy.");
+      return;
+    }
+
+
+    const student = {
+      maHocVien: maHocVien,
+      ten: ten,
+      lop: lop,
+      email: email,
+      ngaySinh: ngaySinh,
+      module: module,
+    };
+
+    students.push(student);
+    displayStudents();
+  };
+
+  // Sửa thông tin học viên
+  const editStudent = () => {
+    const maHocVien = prompt("Nhập mã học viên cần sửa thông tin:");
+
+    const foundIndex = students.findIndex(
+            (student) => student.maHocVien === maHocVien
+    );
+    if (foundIndex !== -1) {
+      const ten = prompt("Nhập tên học viên:");
+      const lop = prompt("Nhập lớp học viên:");
+      const email = prompt("Nhập email học viên:");
+      const ngaySinh = prompt("Nhập ngày sinh học viên:");
+      const module = prompt("Nhập module học viên:");
+
+      students[foundIndex] = {
+        ...students[foundIndex],
+        ten: ten,
+        lop: lop,
+        email: email,
+        ngaySinh: ngaySinh,
+        module: module,
+      };
+
+      displayStudents();
+    } else {
+      alert("Mã học viên không tồn tại");
+    }
+  };
+
+  // Xóa học viên
+  const deleteStudent = () => {
+    const maHocVien = prompt("Nhập mã học viên cần xóa:");
+
+    const foundIndex = students.findIndex(
+            (student) => student.maHocVien === maHocVien
+    );
+    if (foundIndex !== -1) {
+      const confirmDelete = confirm("Bạn có chắc chắn muốn xóa học viên này?");
+      if (confirmDelete) {
+        students.splice(foundIndex, 1);
+        displayStudents();
+      }
+    } else {
+      alert("Mã học viên không tồn tại");
+    }
+  };
+</script>
+</body>
+</html>

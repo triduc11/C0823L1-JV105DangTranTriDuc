@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .item1 {
+            grid-area: header;
+        }
+
+        .item2 {
+            grid-area: menu;
+        }
+
+        .item3 {
+            grid-area: 2 / 2 / span 2 / span 5;
+        }
+
+        /*.item4 { grid-area: right; }*/
+        /*.item5 { grid-area: footer; }*/
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+            gap: 10px;
+            background-color: #dcdbe1;
+            padding: 10px;
+        }
+
+        .grid-container > div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px
+        }
+
+        .grid-num {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0);
+            padding: 20px;
+            font-size: 20px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+<div class="grid-container">
+    <div class="item1">Hệ thống quản lý bài tập CaseStudy 1</div>
+    <div class="item2">
+        <div class="grid-num">
+            <select>
+                <option value="Bài tập 1" selected>Bài tập 1</option>
+                <option value="csharp">C#</option>
+                <option value="cpp">C++</option>
+                <option value="php">PHP</option>
+                <option value="ruby">Ruby</option>
+                <option value="js">Javascript</option>
+                <option value="dart">Dart</option>
+            </select>
+        </div>
+        <div class="grid-num">
+            <select>
+                <option value="Bài tập 1" selected>Bài tập 2</option>
+                <option value="csharp">C#</option>
+                <option value="cpp">C++</option>
+                <option value="php">PHP</option>
+                <option value="ruby">Ruby</option>
+                <option value="js">Javascript</option>
+                <option value="dart">Dart</option>
+            </select>
+        </div>
+        <div class="grid-num">
+            <select>
+                <option value="Bài tập 1" selected>Bài tập 3</option>
+                <option value="csharp">C#</option>
+                <option value="cpp">C++</option>
+                <option value="php">PHP</option>
+                <option value="ruby">Ruby</option>
+                <option value="js">Javascript</option>
+                <option value="dart">Dart</option>
+            </select>
+        </div>
+        <div class="grid-num">
+            <select>
+                <option value="Bài tập 1" selected>Bài tập 4</option>
+                <option value="csharp">C#</option>
+                <option value="cpp">C++</option>
+                <option value="php">PHP</option>
+                <option value="ruby">Ruby</option>
+                <option value="js">Javascript</option>
+                <option value="dart">Dart</option>
+            </select>
+        </div>
+        <div class="grid-num">
+            <select>
+                <option value="Bài tập 1" selected>Bài tập 5</option>
+                <option value="csharp">C#</option>
+                <option value="cpp">C++</option>
+                <option value="php">PHP</option>
+                <option value="ruby">Ruby</option>
+                <option value="js">Javascript</option>
+                <option value="dart">Dart</option>
+            </select>
+        </div>
+    </div>
+    <div class="item3"></div>
+</div>
+</body>
+</html>

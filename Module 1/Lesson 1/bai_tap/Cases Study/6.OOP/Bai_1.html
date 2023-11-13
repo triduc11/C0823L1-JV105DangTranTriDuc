@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+
+    <title>Bai 1</title>
+</head>
+<body>
+<h2>Hệ thống quản lý học viên CODEGYM</h2>
+
+<div class="container m-2">
+    <div>
+        <label><input type="text" id="id" placeholder="id"/></label>
+        <label><input hidden type="text" id="idHidden" placeholder="id"/></label>
+        <label><input type="text" id="code" placeholder="code"/></label>
+        <label><input type="text" id="name" placeholder="name"/></label>
+        <label><input type="text" id="class" placeholder="class"></label> <br> <br>
+        <label><input type="text" id="email" placeholder="email"></label>
+        <label><input type="text" id="birthday" placeholder="birthday"></label>
+        <label><input type="text" id="module" placeholder="module"></label>
+        <button onclick="handleAddNewStudent()" class="btn btn-outline-primary">
+            Add
+        </button>
+        <button onclick="handleUpdateStudent()" class="btn btn-outline-warning">
+            Update
+        </button>
+        <div class="alert alert-primary" role="alert">
+            A simple primary alert—check it out!
+        </div>
+    </div>
+    <div id="root"></div>
+</div>
+
+<script>
+    class Student {
+        constructor(id, code, name, classroom, email, birthday, module) {
+            this.id = id;
+            this.code = code;
+            this.name = name;
+            this.classroom = classroom;
+            this.email = email;
+            this.birthday = birthday;
+            this.module = module;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getCode() {
+            return this.code;
+        }
+
+        setCode(code) {
+            this.code = code;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        setEmail(email) {
+            this.email = email;
+        }
+
+        getBirthday() {
+            return this.birthday;
+        }
+
+        setBirthday(birthday) {
+            this.birthday = birthday;
+        }
+
+        getClassroom() {
+            return this.classroom;
+        }
+
+        setClassroom(classroom) {
+            this.classroom = classroom;
+        }
+
+        getModule() {
+            return this.module;
+        }
+
+        setModule(module) {
+            this.module = module;
+        }
+    }
+
+    let students = [];
+    let Duc = new Student(1, "HV-0001", "DangDuc", "C08", "duc14092005@gmail.com", "14/09/2005","1");
+    let Kyrie = new Student(2, "HV-0002", "KyrieDuc", "C07", "kyrieDuc1409@gmail.com", "14/09/2007","2");
+
+    students.push(Duc) ;
+    students.push(Kyrie) ;
+
+    function displayStudents() {
+        let studentData = `<table border="1" class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Email</th>
+            <th>Birthday</th>
+            <th>Module</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>`;
+        for (let i = 0; i < students.length; i++) {
+            const student = students[i];
+            studentData += `<tr>
+            <td>${student.getId()}</td>
+            <td>${student.getCode()}</td>
+            <td>${student.getName()}</td>
+            <td>${student.getClassroom()}</td>
+            <td>${student.getEmail()}</td>
+            <td>${student.getBirthday()}</td>
+            <td>${student.getModule()}</td>
+            <td>
+              <button onclick="handleShowEditStudent(${student.getId()})">Edit</button>
+            </td>
+            <td>
+              <button onclick="handleDeleteStudent(${student.getId()})">Delete</button>
+            </td>
+          </tr>`;
+        }
+        studentData += `</tbody>
+    </table>`;
+        document.getElementById("root").innerHTML = studentData;
+    }
+
+    displayStudents();
+
+    function handleDeleteStudent(studentId) {
+        let index = -1;
+        for (let i = 0; i < students.length; i++) {
+            const student = students[i];
+            if (student.getId() === studentId) {
+                index = i;
+                break;
+            }
+        }
+        if (index === -1) {
+            alert("Khong tim thay");
+        } else {
+            const confirmDelete = confirm(
+                `Ban co muon xoa sinh vien ${students[index].getName()} khong?`
+            );
+            if (confirmDelete) {
+                students.splice(index, 1);
+                displayStudents();
+            }
+        }
+    }
+
+    function handleAddNewStudent() {
+        let id = +document.getElementById("id").value;
+        let code = document.getElementById("code").value;
+        let name = document.getElementById("name").value;
+        let classroom = document.getElementById("class").value;
+        let email = document.getElementById("email").value;
+        let birthday = document.getElementById("birthday").value;
+        let module = document.getElementById("module").value;
+
+        let student = new Student(id, code, name, classroom, email, birthday, module);
+        console.log(student);
+        students.push(student);
+
+        displayStudents();
+
+        document.getElementById("id").value = " ";
+        document.getElementById("code").value = " ";
+        document.getElementById("name").value = " ";
+        document.getElementById("class").value = " ";
+        document.getElementById("email").value = " ";
+        document.getElementById("birthday").value = " ";
+        document.getElementById("module").value = " ";
+    }
+
+
+    function handleShowEditStudent(studentId) {
+        let index = -1;
+        for (let i = 0; i < students.length; i++) {
+            const student = students[i];
+            if (student.getId() === studentId) {
+                index = i;
+                break;
+            }
+        }
+        if (index === -1) {
+            alert("Khong tim thay");
+        } else {
+            document.getElementById("idHidden").value = students[index].getId();
+            document.getElementById("code").value = students[index].getCode();
+            document.getElementById("name").value = students[index].getName();
+            document.getElementById("name").value = students[index].getClassroom();
+            document.getElementById("name").value = students[index].getEmail();
+            document.getElementById("name").value = students[index].getBirthday();
+            document.getElementById("name").value = students[index].getModule();
+            //Hidden input
+            document.getElementById("id").style.display = "none";
+        }
+    }
+
+    function handleUpdateStudent() {
+        let id = +document.getElementById("idHidden").value;
+        let code = document.getElementById("code").value;
+        let name = document.getElementById("name").value;
+        let classroom = document.getElementById("class").value;
+        let email = document.getElementById("email").value;
+        let birthday = document.getElementById("birthday").value;
+        let module = document.getElementById("module").value;
+        const index = students.findIndex((std) => std.getId() === +id);
+        if (index === -1) {
+            alert("Khong tim thay");
+        } else {
+            students[index].setCode(code);
+            students[index].setName(name);
+            students[index].setClassroom(classroom);
+            students[index].setEmail(email);
+            students[index].setBirthday(birthday);
+            students[index].setModule(module);
+            displayStudents();
+            //Hidden input
+            document.getElementById("id").style.display = "block";
+            // document.getElementById("code").value = "";
+            // document.getElementById("name").value = "";
+        }
+    }
+</script>
+</body>
+</html>
